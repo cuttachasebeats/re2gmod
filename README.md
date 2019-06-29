@@ -1,9 +1,9 @@
 So I decided to finally release this to the public. This gamemode has be worked on by Cutta Chase Beats and<br> 
 "Noobulator" (Can't Find On Steam). There has been lots of bug fixes and lots of new added content.<br> 
 The gamemode is basically complete. just added more content is my next thing 
-* ### Escape Maps 
-* ### New Modes 
-* ### More Bug Fixes
+* Escape Maps 
+* New Modes 
+* More Bug Fixes
 
 NOTE: Can Only Host Gamemode Dedicated (Listening Server Has Not Been Tested But Has Been Reported Working)
 NOTE: server.cfg must have sv_gravity 400 & sv_alltalk 3
