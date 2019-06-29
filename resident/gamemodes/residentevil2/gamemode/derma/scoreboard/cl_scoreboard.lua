@@ -158,17 +158,17 @@ function GM:HUDDrawScoreBoard()
 	surface.DrawRect( xOffset, y, boardWidth, txHeight + 6 )
 
 
-	surface.SetTextPos( xOffset + 16,								y)	surface.DrawText("#Name")
-	surface.SetTextPos( xOffset + boardWidth - (colWidth*3) + 8,	y)	surface.DrawText("Money")
-	surface.SetTextPos( xOffset + boardWidth - (colWidth*2) + 8,	y)	surface.DrawText("Kills")
-	surface.SetTextPos( xOffset + boardWidth - (colWidth*1) + 8,	y)	surface.DrawText("#Ping")
+	surface.SetTextPos( xOffset + 16,								y)	surface.DrawText("#"..translate.Get("name").."")
+	surface.SetTextPos( xOffset + boardWidth - (colWidth*3) + 8,	y)	surface.DrawText(translate.Get("money"))
+	surface.SetTextPos( xOffset + boardWidth - (colWidth*2) + 8,	y)	surface.DrawText(translate.Get("kills"))
+	surface.SetTextPos( xOffset + boardWidth - (colWidth*1) + 8,	y)	surface.DrawText("#"..translate.Get("ping").."")
 
 	y = y + txHeight + 4
 
 	local yPosition = y
 	for team,info in pairs(ScoreboardInfo) do
 
-		local teamText = info.TeamName .. "  (" .. #info.Players .. " Players)"
+		local teamText = info.TeamName .. "  (" .. #info.Players .. " "..translate.Get("players")..")"
 
 		surface.SetFont( "Trebuchet18" )
 		surface.SetTextColor( 0, 0, 0, 255 )

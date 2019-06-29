@@ -14,6 +14,15 @@ RULES FOR TRANSLATORS!!
 
 translate.AddLanguage("en", "English")
 
+--Scoreboard
+LANGUAGE.players                             = "Players"
+LANGUAGE.name                                = "Name"
+LANGUAGE.money                               = "Money"
+LANGUAGE.kills                               = "Kills"
+LANGUAGE.ping                                = "Ping"
+LANGUAGE.survivors                           = "Survivors"
+LANGUAGE.unfortunate                         = "The Unfortunate"
+
 
 
 

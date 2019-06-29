@@ -8,11 +8,11 @@ GM.TeamBased 	= true
 
 function GM:CreateTeams()
 	TEAM_SPECTATOR = 0
-	team.SetUp(TEAM_SPECTATOR,"The Unfortunate",Color(90,155,90,120))
+	team.SetUp(TEAM_SPECTATOR,translate.Get("unfortunate"),Color(90,155,90,120))
 	team.SetSpawnPoint(TEAM_SPECTATOR,"info_player_start")
 
 	TEAM_HUNK = 1
-	team.SetUp(TEAM_HUNK,"Survivors",Color(155,155,155,120))
+	team.SetUp(TEAM_HUNK,translate.Get("survivors"),Color(155,155,155,120))
 	team.SetSpawnPoint(TEAM_HUNK,"info_player_start")
 end
 
