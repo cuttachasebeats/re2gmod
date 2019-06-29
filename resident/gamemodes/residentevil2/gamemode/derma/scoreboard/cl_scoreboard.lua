@@ -158,10 +158,10 @@ function GM:HUDDrawScoreBoard()
 	surface.DrawRect( xOffset, y, boardWidth, txHeight + 6 )
 
 
-	surface.SetTextPos( xOffset + 16,								y)	surface.DrawText("#"..translate.Get("name").."")
+	surface.SetTextPos( xOffset + 16,								y)	surface.DrawText(translate.Get("name"))
 	surface.SetTextPos( xOffset + boardWidth - (colWidth*3) + 8,	y)	surface.DrawText(translate.Get("money"))
 	surface.SetTextPos( xOffset + boardWidth - (colWidth*2) + 8,	y)	surface.DrawText(translate.Get("kills"))
-	surface.SetTextPos( xOffset + boardWidth - (colWidth*1) + 8,	y)	surface.DrawText("#"..translate.Get("ping").."")
+	surface.SetTextPos( xOffset + boardWidth - (colWidth*1) + 8,	y)	surface.DrawText(translate.Get("ping"))
 
 	y = y + txHeight + 4
 

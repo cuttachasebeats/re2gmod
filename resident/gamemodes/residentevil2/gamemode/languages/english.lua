@@ -23,6 +23,37 @@ LANGUAGE.ping                                = "Ping"
 LANGUAGE.survivors                           = "Survivors"
 LANGUAGE.unfortunate                         = "The Unfortunate"
 
+--HUD(Screen stuff)
+LANGUAGE.dead_zombies                        = "Dead Zombies"
+LANGUAGE.condition                           = "Condition"
+LANGUAGE.game                                = "Game"
+LANGUAGE.difficulty                          = "Difficulty"
+LANGUAGE.starting_in                         = "Starting in"
+LANGUAGE.time_alive                          = "Time Alive"
+LANGUAGE.time_left                           = "Time Left"
+LANGUAGE.your_kills                          = "Your Kills"
+LANGUAGE.your_time                           = "Your Time"
+LANGUAGE.gametime                            = "GameTime"
+LANGUAGE.fine                                = "Fine"
+LANGUAGE.caution                             = "Caution"
+LANGUAGE.danger                              = "Danger"
+LANGUAGE.dead                                = "Dead"
+LANGUAGE.infected                            = "Infected"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
