@@ -18,12 +18,13 @@ translate.AddLanguage("en", "English")
 LANGUAGE.players                             = "Players"
 LANGUAGE.name                                = "Name"
 LANGUAGE.money                               = "Money"
-LANGUAGE.kills                               = "Kills"
+LANGUAGE.kills_score                         = "Kills"
 LANGUAGE.ping                                = "Ping"
 LANGUAGE.survivors                           = "Survivors"
 LANGUAGE.unfortunate                         = "The Unfortunate"
 
 --HUD(Screen stuff)
+LANGUAGE.kills                               = "Kills"
 LANGUAGE.dead_zombies                        = "Dead Zombies"
 LANGUAGE.condition                           = "Condition"
 LANGUAGE.game                                = "Game"
@@ -39,6 +40,25 @@ LANGUAGE.caution                             = "Caution"
 LANGUAGE.danger                              = "Danger"
 LANGUAGE.dead                                = "Dead"
 LANGUAGE.infected                            = "Infected"
+
+--Vote Menu
+LANGUAGE.select_map                          = "Select A Map"
+LANGUAGE.difficulty_vote                     = "Difficulty"
+LANGUAGE.easy                                = "Easy"
+LANGUAGE.normal                              = "Normal"
+LANGUAGE.difficult                           = "Difficult"
+LANGUAGE.expert                              = "Expert"
+LANGUAGE.suicidal                            = "Suicidal"
+LANGUAGE.death                               = "Death"
+LANGUAGE.racooncity                          = "RacoonCity"
+LANGUAGE.submit_vote                         = "Submit Your Vote"
+LANGUAGE.change_vote                         = "Change Vote"
+LANGUAGE.you_selected                        = "You selected"
+LANGUAGE.for_next_dificulty                  = "for the next difficulty."
+LANGUAGE.for_next_map                        = "for the next map."
+LANGUAGE.for_next_gamemode                   = "for the next gamemode."
+
+
 
 
 
