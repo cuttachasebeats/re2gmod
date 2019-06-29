@@ -1,9 +1,9 @@
 DeriveGamemode( "base" )
 
 GM.Name = "Resident Evil 2: Garry's Mod"
-GM.Author = "N/A"
-GM.Email = "N/A"
-GM.Website = "N/A"
+GM.Author = "Cutta Chase Beats"
+GM.Email = ""
+GM.Website = ""
 GM.TeamBased 	= true
 
 function GM:CreateTeams()
