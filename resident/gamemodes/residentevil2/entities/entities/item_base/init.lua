@@ -128,7 +128,7 @@ local checkinbents = { "snpc_zombie_king",}
 			end
 		end
 	end
-local checkinbents = { "snpc_shambler3",}
+local checkinbents = { "snpc_infected_s",}
 	for a,b in pairs(checkinbents) do
 		for k,v in pairs(ents.FindByClass(b)) do
 			if v:GetPos():Distance(self:GetPos()) <= 100 && self.Armed then
