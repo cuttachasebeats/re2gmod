@@ -42,7 +42,7 @@ ENT.ShootRange = 80
 ENT.MeleeRange = 40
 ENT.StopRange = 20
 
-ENT.MeleeDamage = 10
+ENT.MeleeDamage = 5
 ENT.MeleeDamageType = DMG_CLUB
 
 ENT.MeleeDamageForce = Vector( math.random( ENT.MeleeDamage, ENT.MeleeDamage, ENT.MeleeDamage ) )
@@ -560,7 +560,7 @@ function ENT:ChaseEnemy( options )
 		for key, ent in pairs(ents.FindInSphere(self:GetPos(), 35)) do
 			if IsValid(ent) then
 			if ent:GetCollisionGroup() == COLLISION_GROUP_DEBRIS then return false end
-				if ent:IsPlayer() && self:GetRangeTo( ent ) < self.MeleeRange && (ent:Alive() && ent:Team() != TEAM_SPECTATOR && GetGlobalString("Mode") != "End" && ent:GetMoveType() == MOVETYPE_WALK) then
+				if ent:IsPlayer() && self:GetRangeTo( ent ) < self.MeleeRange then
 				self:Melee(ent)
 				elseif ( ent:GetClass() == "func_breakable" || ent:GetClass() == "func_physbox" || ent:GetClass() == "prop_physics_multiplayer" || ent:GetClass() == "prop_physics" ) and !ent.FalseProp then
 				self:Melee(ent)
