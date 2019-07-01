@@ -38,7 +38,7 @@ GM.Items["item_herb"] = {
 	Name = translate.Get("green_herb"),-- The Name
 	Angle = Angle(90,90,90),---- Allows for manual rotation on the display
 	Desc = translate.Get("green_herb_desk"),-- The description
-	Model = "models/props_junk/watermelon01.mdl",-- The model
+	Model = "models/resident evil/item_herbgre.mdl",-- The model
 	-- what it does don't touch it.
 	Condition = function(ply,item)
 				local hp = ply:Health()
@@ -68,7 +68,7 @@ GM.Items["item_herb"] = {
 GM.Items["item_rherb"] = {
 	Name = translate.Get("red_herb"),
 	Desc = translate.Get("red_herb_desk"),
-	Model = "models/props_junk/watermelon01.mdl",
+	Model = "models/resident evil/item_herbred.mdl",
 	Condition = function(ply,item)
 				if !ply:GetNWBool("Infected") then
 					return false
