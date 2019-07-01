@@ -786,8 +786,8 @@ GM.Items["item_expbarrel"] = {
 
 GM.Items["item_c4"] =
 {
-	Name = "C4 Plastic Explosive",
-	Desc = "Plant and Detonate",
+	Name = translate.Get("c4"),
+	Desc = translate.Get("c4_desk"),
 	Model = "models/weapons/w_c4_planted.mdl",
 	Function =
 		function(ply)
@@ -827,8 +827,8 @@ GM.Items["item_c4"] =
 	Num = 14,
 }
 GM.Items["item_landmine"] = {
-	Name = "Proximity Mine",
-	Desc = "Plants at your feet.",
+	Name = translate.Get("proximity_mine"),
+	Desc = translate.Get("proximity_mine_desk"),
 	Model = "models/landmine.mdl",
 	Function =
 	function(ply)

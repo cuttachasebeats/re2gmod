@@ -154,41 +154,26 @@ LANGUAGE.flame_rounds                        = "Flame Rounds"
 LANGUAGE.flame_rounds_desk                   = "6 rounds"
 LANGUAGE.freeze_rounds                       = "Freeze Rounds"
 LANGUAGE.freeze_rounds_desk                  = "6 rounds"
+LANGUAGE.proximity_mine                      = "Proximity Mine"
+LANGUAGE.proximity_mine_desk                 = "Plants at your feet."
+LANGUAGE.c4                                  = "C4 Plastic Explosive"
+LANGUAGE.c4_desk                             = "Plant and Detonate"
 
 --Gamemodes
 LANGUAGE.cant_suicide                        = "You can't suicide!"
 LANGUAGE.you_earned                          = "You earned $%s"
- 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-
-
-
-
-
-
-
+LANGUAGE.boss_appeared                       = "Boss has appeared...KILL HIM!"
+LANGUAGE.boss_killed                         = "Players killed nemesis, $%s to everyone"
+LANGUAGE.boss_not_killed                     = "Players did not kill the Boss, no cash earned"
+LANGUAGE.won                                 = "%n won %s for getting the most kills. Well done!"
+LANGUAGE.vip_survived                        = "The Vip has survived! All players won $%s . Fine Work!"
+LANGUAGE.vip_died                            = "The Vip has died, nobody is rewarded a special bonus."
+LANGUAGE.protect_vip                         = "Protect This Player"
+LANGUAGE.you_vip                             = "You are the Vip"
+LANGUAGE.umbrella_win                        = "Umbrella Wins"
+LANGUAGE.stars_win                           = "S.T.A.R.S Wins"
+LANGUAGE.survived                            = "Surviving players won $%s for staying alive. Well done!"
+LANGUAGE.teamvip_won                         = "The %n Team Won! They are awarded $%s each. Fine Work!"
 
 
 
