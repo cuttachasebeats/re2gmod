@@ -93,6 +93,7 @@ LANGUAGE.accuracy                            = "Accuracy"
 LANGUAGE.clip_size                           = "Clip Size"
 LANGUAGE.firing_speed                        = "Firing Speed"
 LANGUAGE.reload_speed                        = "Reload Speed"
+LANGUAGE.many_weapons                        = "Too many weapons"
 
 --Upgrades Menu
 LANGUAGE.upgrades_menu                       = "Upgrades"
@@ -122,6 +123,7 @@ LANGUAGE.max_reloadspeed                     = "Maximum Reload Speed Level"
 LANGUAGE.use                                 = "Use"
 LANGUAGE.give                                = "Give"
 LANGUAGE.drop                                = "Drop"
+LANGUAGE.use_on                              = "Use On"
 
 --Items
 LANGUAGE.spray                               = "Spray"
@@ -174,6 +176,7 @@ LANGUAGE.umbrella_win                        = "Umbrella Wins"
 LANGUAGE.stars_win                           = "S.T.A.R.S Wins"
 LANGUAGE.survived                            = "Surviving players won $%s for staying alive. Well done!"
 LANGUAGE.teamvip_won                         = "The %n Team Won! They are awarded $%s each. Fine Work!"
+LANGUAGE.not_enough_players                  = "Not Enough Players, It is now Survivor"
 
 
 

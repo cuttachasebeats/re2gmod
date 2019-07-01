@@ -539,7 +539,7 @@ GM.Gamemode = {}
 
 	GM.Gamemode["Mercenaries"] = {
 		Condition = function()
-			if team.NumPlayers(TEAM_HUNK) <= 0 then
+			if team.NumPlayers(TEAM_HUNK) <= 1 then
 				return false
 			end
 			return true

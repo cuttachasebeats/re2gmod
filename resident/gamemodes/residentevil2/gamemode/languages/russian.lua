@@ -86,7 +86,7 @@ LANGUAGE.upgrade_weapons                     = "Улучшить Оружие"
 LANGUAGE.upgrade_weapons_msg                 = "Интересно, что бы вы купили здесь?"
 
 --Skills Menu
-LANGUAGE.skills_menu                         = "Skills"
+LANGUAGE.skills_menu                         = "Перки"
 LANGUAGE.perks                               = "Перки"
 LANGUAGE.perks_msg                           = "Интересно, что бы вы купили здесь?"
 
@@ -107,6 +107,7 @@ LANGUAGE.max_reloadspeed                     = "Макс. Уровень Ско�
 LANGUAGE.use                                 = "Использовать"
 LANGUAGE.give                                = "Передать"
 LANGUAGE.drop                                = "Выкинуть"
+LANGUAGE.use_on                              = "Использовать на"
 
 --Items
 LANGUAGE.spray                               = "Спрей"
@@ -140,9 +141,9 @@ LANGUAGE.flame_rounds_desk                   = "6 зарядов"
 LANGUAGE.freeze_rounds                       = "Замораживающие Заряды"
 LANGUAGE.freeze_rounds_desk                  = "6 зарядов"
 LANGUAGE.proximity_mine                      = "Противопехотная мина "
-LANGUAGE.proximity_mine_desk                 = "Садится у ваших ног."
+LANGUAGE.proximity_mine_desk                 = "Закладывается у ваших ног."
 LANGUAGE.c4                                  = "C4 Пластичная Взрывчатка"
-LANGUAGE.c4_desk                             = "Посадить и Взорвать"
+LANGUAGE.c4_desk                             = "Заложить и Взорвать"
 
 --Gamemodes
 LANGUAGE.cant_suicide                        = "Вы не можете покончить с собой!"
@@ -159,3 +160,19 @@ LANGUAGE.umbrella_win                        = "Амбрелла Победил�
 LANGUAGE.stars_win                           = "S.T.A.R.S Победили"
 LANGUAGE.survived                            = "Выжившие игроки выиграли $%s за выживание. Отличная работа!"
 LANGUAGE.teamvip_won                         = "Команда %n Выиграла! Они награждены по $%s каждому. Прекрасная Работа!"
+LANGUAGE.not_enough_players                  = "Недостаточно игроков, теперь это режим Survivor"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

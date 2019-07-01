@@ -292,7 +292,7 @@ function ReLoadInvList()
 														end
 													end
 													if useable then
-													local Sub_Menu_UseOn = Itembool_IconOptions:AddSubMenu("Use On ...")
+													local Sub_Menu_UseOn = Itembool_IconOptions:AddSubMenu(translate.Get("use_on").." ...")
 																					for _,ply in pairs(team.GetPlayers(TEAM_HUNK)) do
 																						if ply:GetPos():Distance(LocalPlayer():GetPos()) <= 300 && ply != LocalPlayer() then
 																							Sub_Menu_UseOn:AddOption(ply:Nick(),function()

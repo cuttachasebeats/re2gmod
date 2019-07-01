@@ -12,7 +12,7 @@ function GM:BasePrep()
 			if GAMEMODE.Gamemode[GetGlobalString("Re2_Game")].Condition != nil then
 				if !GAMEMODE.Gamemode[GetGlobalString("Re2_Game")].Condition() then
 					SetGlobalString("Re2_Game","Survivor")
-				PrintMessage(HUD_PRINTTALK,"Not Enough Players, It is now Survivor")
+				PrintTranslatedMessage(HUD_PRINTTALK, "not_enough_players")
 				end
 			end
 			if GAMEMODE.Gamemode[GetGlobalString("RE2_Game")].PrepFunction() != nil then
