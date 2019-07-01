@@ -28,7 +28,7 @@ function EFFECT:Init(data)
 	end
 	for i=1,math.ceil(self.Scale*120) do
 		local vecang = VectorRand()*8
-		local particle = emitter:Add("particle/particle_smokegrenade",self.Position - vecang*9*k)
+		local particle = emitter:Add("particle/particle_smokegrenade",self.Position - vecang*9*1)
 		particle:SetColor(80,80,80,255)
 		particle:SetVelocity((math.Rand(50,400)*vecang)*self.Scale)
 		particle:SetDieTime(math.Rand(7,9)*self.Scale)
@@ -42,7 +42,7 @@ function EFFECT:Init(data)
 	end
 	for i=1,math.ceil(self.Scale*50) do
 		local vecang = VectorRand()*8
-		local particle = emitter:Add("Effects/fire_cloud"..math.random(1,2),self.Position - vecang*9*k)
+		local particle = emitter:Add("Effects/fire_cloud"..math.random(1,2),self.Position - vecang*9*1)
 		particle:SetColor(100,100,100,255)
 		particle:SetVelocity((math.Rand(50,200)*vecang)*self.Scale)
 		particle:SetDieTime(math.Rand(0.5,2)*self.Scale)
@@ -55,7 +55,7 @@ function EFFECT:Init(data)
 		particle:SetRollDelta(0.6*math.random(-1,1))
 		if math.random(1,10) == 1 then
 			local vecang = VectorRand()*8
-			local particle = emitter:Add("Effects/fire_embers"..math.random(1,3),self.Position - vecang*9*k)
+			local particle = emitter:Add("Effects/fire_embers"..math.random(1,3),self.Position - vecang*9*1)
 			particle:SetColor(200,200,200,255)
 			particle:SetVelocity((math.Rand(10,30)*vecang)*self.Scale)
 			particle:SetDieTime(math.Rand(8,10)*self.Scale)
