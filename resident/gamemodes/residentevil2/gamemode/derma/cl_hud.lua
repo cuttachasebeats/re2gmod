@@ -155,7 +155,7 @@ function GM:HUDPaint()
 
 			--- infection
 			surface.DrawRect(offset,SH - offsetY, SW/6,SH/8)
-			if client:GetNWBool(translate.Get("infected")) then
+			if client:GetNWBool("Infected") then
 				surface.SetDrawColor( 111, 152, 49, 100 )
 				surface.DrawRect(offset, SH - offsetY, SW/6 * (client:GetNWInt("InfectedPercent")/100), SH/8 )
 				draw.SimpleText(client:GetNWInt("InfectedPercent").."%","Trebuchet18o",offset + SW/6 * (client:GetNWInt("InfectedPercent")/100),SH - offsetY/2,Color(255,255,255),1,1)

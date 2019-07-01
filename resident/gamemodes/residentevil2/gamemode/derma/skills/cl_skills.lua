@@ -35,7 +35,7 @@ function openSkills()
 
   GUI_LoadSkills(GUI_Skills_Panel)
 
-  GUI_Property_Sheet:AddSheet( "Perks", GUI_Skills_Panel, "icon16/box.png", true, true, "I wonder what you would buy here?" )
+  GUI_Property_Sheet:AddSheet( translate.Get("perks"), GUI_Skills_Panel, "icon16/box.png", true, true, translate.Get("perks_msg") )
 
 
 end

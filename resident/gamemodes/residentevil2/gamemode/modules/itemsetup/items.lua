@@ -4,9 +4,9 @@ GM.Items = {}
 ---Items------------------------
 -------------------------------------------------------------
 GM.Items["item_spray"] = {
-	Name = "Spray",-- The Name
+	Name = translate.Get("spray"),-- The Name
 	Angle = Angle(90,90,90),---- Allows for manual rotation on the display
-	Desc = "Heals all wounds",-- The description
+	Desc = translate.Get("spray_desc"),-- The description
 	Model = "models/firstaidspray.mdl",-- The model
 	-- what it does don't touch it.
 	Condition = function(ply,item)
@@ -35,9 +35,9 @@ GM.Items["item_spray"] = {
 	}
 
 GM.Items["item_herb"] = {
-	Name = "Green Herb",-- The Name
+	Name = translate.Get("green_herb"),-- The Name
 	Angle = Angle(90,90,90),---- Allows for manual rotation on the display
-	Desc = "Heals Some wounds",-- The description
+	Desc = translate.Get("green_herb_desk"),-- The description
 	Model = "models/props_junk/watermelon01.mdl",-- The model
 	-- what it does don't touch it.
 	Condition = function(ply,item)
@@ -66,8 +66,8 @@ GM.Items["item_herb"] = {
 	}
 
 GM.Items["item_rherb"] = {
-	Name = "Red Herb",
-	Desc = "Chance To Cure Infection",
+	Name = translate.Get("red_herb"),
+	Desc = translate.Get("red_herb_desk"),
 	Model = "models/props_junk/watermelon01.mdl",
 	Condition = function(ply,item)
 				if !ply:GetNWBool("Infected") then
@@ -80,7 +80,7 @@ GM.Items["item_rherb"] = {
 			ply:SetNWBool("Infected", true)
 			ply:SetNWInt("InfectedPercent", 10)
 			ply:SetNWInt("Immunity", ply:GetNWInt("Immunity") + 10 )
-			ply:PrintMessage(HUD_PRINTTALK,"Infection Lowered")
+			ply:PrintTranslatedMessage(HUD_PRINTTALK, "infection_lowered")
 			ply:EmitSound("items/smallmedkit1.wav",110,100)
 
 			ply:AddStat("CuresUsed", 1)
@@ -92,8 +92,8 @@ GM.Items["item_rherb"] = {
 }
 
 GM.Items["item_tcure"] = {
-	Name = "T-Virus Cure",
-	Desc = "Cures Infection",
+	Name = translate.Get("tvirus_cure"),
+	Desc = translate.Get("tvirus_cure_desk"),
 	Model = "models/items/healthkit.mdl",
 	Condition = function(ply,item)
 				if !ply:GetNWBool("Infected") then
@@ -106,7 +106,7 @@ GM.Items["item_tcure"] = {
 			ply:SetNWBool("Infected", false)
 			ply:SetNWInt("InfectedPercent", 0)
 			ply:SetNWInt("Immunity", ply:GetNWInt("Immunity") + 10 )
-			ply:PrintMessage(HUD_PRINTTALK,"Infection Cured")
+			ply:PrintTranslatedMessage(HUD_PRINTTALK, "infection_cured")
 			ply:EmitSound("HL1/fvox/antidote_shot.wav",110,100)
 
 			ply:AddStat("CuresUsed", 1)
@@ -118,8 +118,8 @@ GM.Items["item_tcure"] = {
 }
 
 GM.Items["item_ammo_pistol"] = {
-	Name = "Pistol Ammo",
-	Desc = "40 rounds",
+	Name = translate.Get("pistol_ammo"),
+	Desc = translate.Get("pistol_ammo_desk"),
 	Model = "models/re_magazine.mdl",
 	Condition =
 		function(ply,item)
@@ -147,8 +147,8 @@ GM.Items["item_ammo_pistol"] = {
 }
 
 GM.Items["item_ammo_buckshot"] = {
-	Name = "Shotgun Ammo",
-	Desc = "36 rounds",
+	Name = translate.Get("shotgun_ammo"),
+	Desc = translate.Get("shotgun_ammo_desk"),
 	Model = "models/items/boxbuckshot.mdl",
 	Condition =
 		function(ply,item)
@@ -176,8 +176,8 @@ GM.Items["item_ammo_buckshot"] = {
 }
 
 GM.Items["item_ammo_smg"] = {
-	Name = "Automatic Ammo",
-	Desc = "45 rounds",
+	Name = translate.Get("auto_ammo"),
+	Desc = translate.Get("auto_ammo_desk"),
 	Model = "models/items/boxmrounds.mdl",
 	Condition =
 		function(ply,item)
@@ -205,8 +205,8 @@ GM.Items["item_ammo_smg"] = {
 }
 
 GM.Items["item_ammo_rifle"] = {
-	Name = "Rifle Ammo",
-	Desc = "60 rounds",
+	Name = translate.Get("rifle_ammo"),
+	Desc = translate.Get("rifle_ammo_desk"),
 	Model = "models/items/boxsrounds.mdl",
 	Condition =
 		function(ply,item)
@@ -235,8 +235,8 @@ GM.Items["item_ammo_rifle"] = {
 
 GM.Items["item_ammo_magnum"] =
 {
-	Name = "Magnum Rounds",
-	Desc = "35 rounds",
+	Name = translate.Get("magnum_ammo"),
+	Desc = translate.Get("magnum_ammo_desk"),
 	Model = "models/items/357ammobox.mdl",
 	Condition =
 		function(ply,item)
@@ -265,8 +265,8 @@ GM.Items["item_ammo_magnum"] =
 
 GM.Items["item_ammo_sniper"] =
 {
-	Name = "Sniper Rounds",
-	Desc = "20 rounds",
+	Name = translate.Get("sniper_ammo"),
+	Desc = translate.Get("sniper_ammo_desk"),
 	Model = "models/rifle_box.mdl",
 	Condition =
 		function(ply,item)
@@ -295,8 +295,8 @@ GM.Items["item_ammo_sniper"] =
 
 GM.Items["item_ammo_rocket"] =
 {
-	Name = "Rocket Round",
-	Desc = "4 rockets",
+	Name = translate.Get("rocket_round"),
+	Desc = translate.Get("rocket_round_desk"),
 	Model = "models/weapons/w_missile_Closed.mdl",
 	Condition =
 		function(ply,item)
@@ -325,8 +325,8 @@ GM.Items["item_ammo_rocket"] =
 
 GM.Items["item_ammo_gl_explosive"] =
 {
-	Name = "Explosive Rounds",
-	Desc = "6 rounds",
+	Name = translate.Get("explosive_rounds"),
+	Desc = translate.Get("explosive_rounds_desk"),
 	Model = "models/glauncherrounds.mdl",
 	Material = "models/grounds/grenaderounds#00_15",
 	Condition =
@@ -364,8 +364,8 @@ GM.Items["item_ammo_gl_explosive"] =
 }
 GM.Items["item_ammo_gl_flame"] =
 {
-	Name = "Flame Rounds",
-	Desc = "6 rounds",
+	Name = translate.Get("flame_rounds"),
+	Desc = translate.Get("flame_rounds_desk"),
 	Model = "models/glauncherrounds.mdl",
 	Material = "models/grounds/grenaderounds#00_16",
 	Condition =
@@ -403,8 +403,8 @@ GM.Items["item_ammo_gl_flame"] =
 }
 GM.Items["item_ammo_gl_freeze"] =
 {
-	Name = "Freeze Rounds",
-	Desc = "6 rounds",
+	Name = translate.Get("freeze_rounds"),
+	Desc = translate.Get("freeze_rounds_desk"),
 	Model = "models/glauncherrounds.mdl",
 	Material = "models/grounds/grenaderounds#00_17",
 	Condition =

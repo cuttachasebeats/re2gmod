@@ -13,7 +13,7 @@ function openAdmin()
                   end
 
 
-local PauseTimer = re2_create_Button(adminBackground, .01, .02, .15, .075,Color(255,255,255), "font large", "Pause Timer")
+local PauseTimer = re2_create_Button(adminBackground, .01, .02, .15, .075,Color(255,255,255), "font large", translate.Get("pause_times"))
       PauseTimer:SizeToContents()
       PauseTimer.Paint = function() draw.RoundedBox( 0, 0, 0, PauseTimer:GetWide(), PauseTimer:GetTall(), Color(60,60,60,255)) end
       PauseTimer.DoClick = function()
@@ -21,7 +21,7 @@ local PauseTimer = re2_create_Button(adminBackground, .01, .02, .15, .075,Color(
                  net.SendToServer()
                end
 
-local UnPauseTimer = re2_create_Button(adminBackground, .01, .1, .15, .075,Color(255,255,255), "font large", "UnPause Timer")
+local UnPauseTimer = re2_create_Button(adminBackground, .01, .1, .15, .075,Color(255,255,255), "font large", translate.Get("unpause_times"))
       UnPauseTimer:SizeToContents()
       UnPauseTimer.Paint = function() draw.RoundedBox( 0, 0, 0, UnPauseTimer:GetWide(), UnPauseTimer:GetTall(), Color(60,60,60,255)) end
       UnPauseTimer.DoClick = function()
@@ -29,14 +29,14 @@ local UnPauseTimer = re2_create_Button(adminBackground, .01, .1, .15, .075,Color
                    net.SendToServer()
                  end
 
-local SetMoneyBtn = re2_create_Button(adminBackground, .01, .18, .15, .075,Color(255,255,255), "font large", "Set Money")
+local SetMoneyBtn = re2_create_Button(adminBackground, .01, .18, .15, .075,Color(255,255,255), "font large", translate.Get("set_money"))
       SetMoneyBtn:SizeToContents()
       SetMoneyBtn.Paint = function() draw.RoundedBox( 0, 0, 0, SetMoneyBtn:GetWide(), SetMoneyBtn:GetTall(), Color(60,60,60,255)) end
             SetMoneyBtn.DoClick = function()
               local DComboBox = vgui.Create( "DComboBox", adminBackground )
                     DComboBox:SetPos( adminBackground:GetWide()*.01, adminBackground:GetTall()*.18 )
                     DComboBox:SetSize( adminBackground:GetWide()*.15, adminBackground:GetTall()*.05 )
-                    DComboBox:SetValue( "Select Player" )
+                    DComboBox:SetValue( translate.Get("select_player") )
                     playerstable = player:GetAll()
                     for k, v in pairs( playerstable ) do
 	                   DComboBox:AddChoice( v:Name().." : "..v:GetNWInt("Money") )
@@ -64,14 +64,14 @@ local SetMoneyBtn = re2_create_Button(adminBackground, .01, .18, .15, .075,Color
 					              end
                       end
 
-local createWeapon = re2_create_Button(adminBackground, .01, .26, .15, .075,Color(255,255,255), "font large", "Create Weapon")
+local createWeapon = re2_create_Button(adminBackground, .01, .26, .15, .075,Color(255,255,255), "font large", translate.Get("create_weapon"))
       createWeapon:SizeToContents()
       createWeapon.Paint = function() draw.RoundedBox( 0, 0, 0, createWeapon:GetWide(), createWeapon:GetTall(), Color(60,60,60,255)) end
       createWeapon.DoClick = function()
         local DComboBoxWeapons = vgui.Create( "DComboBox", adminBackground )
               DComboBoxWeapons:SetPos( adminBackground:GetWide()*.01, adminBackground:GetTall()*.26 )
               DComboBoxWeapons:SetSize( adminBackground:GetWide()*.17, adminBackground:GetTall()*.05 )
-              DComboBoxWeapons:SetValue( "Weapons" )
+              DComboBoxWeapons:SetValue( translate.Get("weapons") )
               weapontable = GAMEMODE.Weapons
               --PrintTable(weapontable)
               for weapon,data in pairs(weapontable) do
@@ -91,14 +91,14 @@ local createWeapon = re2_create_Button(adminBackground, .01, .26, .15, .075,Colo
                end
       end
 
-local createItem = re2_create_Button(adminBackground, .01, .34, .15, .075,Color(255,255,255), "font large", "Create Item")
+local createItem = re2_create_Button(adminBackground, .01, .34, .15, .075,Color(255,255,255), "font large", translate.Get("create_item"))
       createItem:SizeToContents()
       createItem.Paint = function() draw.RoundedBox( 0, 0, 0, createItem:GetWide(), createItem:GetTall(), Color(60,60,60,255)) end
       createItem.DoClick = function()
         local DComboBoxItems = vgui.Create( "DComboBox", adminBackground )
               DComboBoxItems:SetPos( adminBackground:GetWide()*.01, adminBackground:GetTall()*.34 )
               DComboBoxItems:SetSize( adminBackground:GetWide()*.17, adminBackground:GetTall()*.05 )
-              DComboBoxItems:SetValue( "Items" )
+              DComboBoxItems:SetValue( translate.Get("items") )
               itemtable = GAMEMODE.Items
               --PrintTable(itemtable)
               for item,data in pairs(GAMEMODE.Items) do
@@ -124,21 +124,21 @@ local createItem = re2_create_Button(adminBackground, .01, .34, .15, .075,Color(
       ItemSlider = vgui.Create( "DNumSlider", adminBackground )
       ItemSlider:SetPos( adminBackground:GetWide()*.01, adminBackground:GetTall()*.30 )
       ItemSlider:SetSize( adminBackground:GetWide()*.2, adminBackground:GetTall()*.05 )
-      ItemSlider:SetText( "Item Count" )
+      ItemSlider:SetText( translate.Get("item_count") )
       ItemSlider:SetValue(1)
       ItemSlider:SetMin( 1 )
       ItemSlider:SetMax( 15 )
       ItemSlider:SetDecimals( 0 )
       end
 
-local setDifficulty = re2_create_Button(adminBackground, .01, .42, .15, .075,Color(255,255,255), "font large", "Set Difficulty")
+local setDifficulty = re2_create_Button(adminBackground, .01, .42, .15, .075,Color(255,255,255), "font large", translate.Get("set_difficulty"))
       setDifficulty:SizeToContents()
       setDifficulty.Paint = function() draw.RoundedBox( 0, 0, 0, setDifficulty:GetWide(), setDifficulty:GetTall(), Color(60,60,60,255)) end
       setDifficulty.DoClick = function()
         local DifficultyComboBox = vgui.Create( "DComboBox", adminBackground )
               DifficultyComboBox:SetPos( adminBackground:GetWide()*.01, adminBackground:GetTall()*.42 )
               DifficultyComboBox:SetSize( adminBackground:GetWide()*.17, adminBackground:GetTall()*.05 )
-              DifficultyComboBox:SetValue( "Difficulty" )
+              DifficultyComboBox:SetValue( translate.Get("difficulty_admin") )
               local easy = DifficultyComboBox:AddChoice( "Easy" ) -- Add our options
         			local norm = DifficultyComboBox:AddChoice( "Normal" )
         			local diff = DifficultyComboBox:AddChoice( "Difficult" )
@@ -148,19 +148,19 @@ local setDifficulty = re2_create_Button(adminBackground, .01, .42, .15, .075,Col
         			local rcc = DifficultyComboBox:AddChoice( "RacoonCity" )
 
               DifficultyComboBox.OnSelect = function( self, index, value )
-                if DifficultyComboBox:GetSelected() == "Easy" then
+                if DifficultyComboBox:GetSelected() == translate.Get("easy") then
                   VoteOption["Difficulty"] = "Easy"
-                elseif DifficultyComboBox:GetSelected() == "Normal" then
+                elseif DifficultyComboBox:GetSelected() == translate.Get("normal") then
                     VoteOption["Difficulty"] = "Normal"
-                elseif DifficultyComboBox:GetSelected() == "Difficult" then
+                elseif DifficultyComboBox:GetSelected() == translate.Get("difficult") then
                     VoteOption["Difficulty"] = "Difficult"
-                elseif DifficultyComboBox:GetSelected() == "Expert" then
+                elseif DifficultyComboBox:GetSelected() == translate.Get("expert") then
                     VoteOption["Difficulty"] = "Expert"
-                elseif DifficultyComboBox:GetSelected() == "Suicidal" then
+                elseif DifficultyComboBox:GetSelected() == translate.Get("suicidal") then
                     VoteOption["Difficulty"] = "Suicidal"
-                elseif DifficultyComboBox:GetSelected() == "Death" then
+                elseif DifficultyComboBox:GetSelected() == translate.Get("death") then
                     VoteOption["Difficulty"] = "Death"
-                elseif DifficultyComboBox:GetSelected() == "RacoonCity" then
+                elseif DifficultyComboBox:GetSelected() == translate.Get("racooncity") then
                     VoteOption["Difficulty"] = "RacoonCity"
                 end
                 net.Start("SetDifficulty")
@@ -185,7 +185,7 @@ local setDifficulty = re2_create_Button(adminBackground, .01, .42, .15, .075,Col
         setDifficulty.Paint = function() draw.RoundedBox( 0, 0, 0, setDifficulty:GetWide(), setDifficulty:GetTall(), Color(0,0,0,255)) end
       end
 
-local healAndcure = re2_create_Button(adminBackground, .01, .50, .15, .075,Color(255,255,255), "font large", "Heal & Cure Player")
+local healAndcure = re2_create_Button(adminBackground, .01, .50, .15, .075,Color(255,255,255), "font large", translate.Get("healcure"))
       healAndcure:SizeToContents()
       healAndcure.Paint = function() draw.RoundedBox( 0, 0, 0, healAndcure:GetWide(), healAndcure:GetTall(), Color(60,60,60,255)) end
       healAndcure.DoClick = function()
@@ -193,7 +193,7 @@ local healAndcure = re2_create_Button(adminBackground, .01, .50, .15, .075,Color
         local comboBoxHeal = vgui.Create( "DComboBox", adminBackground )
               comboBoxHeal:SetPos( adminBackground:GetWide()*.01, adminBackground:GetTall()*.50 )
               comboBoxHeal:SetSize( adminBackground:GetWide()*.2, adminBackground:GetTall()*.05 )
-              comboBoxHeal:SetValue( "Players" )
+              comboBoxHeal:SetValue( translate.Get("players_admin") )
               playerstable2 = player.GetAll()
               for k, v in pairs( playerstable2 ) do
                 comboBoxHeal:AddChoice( v:Name() )
@@ -202,7 +202,7 @@ local healAndcure = re2_create_Button(adminBackground, .01, .50, .15, .075,Color
               comboBoxHeal.OnSelect = function( _, _, value )
                 SIDSelected2 = playerstable2[comboBoxHeal:GetSelectedID()]:SteamID()
                 plynameSelected2 = playerstable2[comboBoxHeal:GetSelectedID()]:Name()
-                ply:ChatPrint("You have healed: "..plynameSelected2)
+				ply:ChatPrint("You have healed: "..plynameSelected2)
                 net.Start("fixPlayer")
                 net.WriteString(SIDSelected2)
                 net.SendToServer()

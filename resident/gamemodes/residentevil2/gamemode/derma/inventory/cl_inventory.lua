@@ -236,7 +236,7 @@ function ReLoadInvList()
 											Itembool_IconOptions = DermaMenu() -- Creates the menu
 											bool_IconOptions = true
 											if LocalPlayer():Team() == TEAM_HUNK then
-												Itembool_IconOptions:AddOption("Use", function()
+												Itembool_IconOptions:AddOption(translate.Get("use"), function()
 																						if LocalPlayer():Team() != TEAM_HUNK then return end
 																							bool_IconOptions = false
 																							bool_CanClose = false
@@ -259,7 +259,7 @@ function ReLoadInvList()
 																							RunConsoleCommand("inv_UseItem", v.Item, k)
 																						end)
 
-												local Sub_Menu_Give = Itembool_IconOptions:AddSubMenu("Give")
+												local Sub_Menu_Give = Itembool_IconOptions:AddSubMenu(translate.Get("give"))
 																							for _,ply in pairs(team.GetPlayers(TEAM_HUNK)) do
 																								if ply:GetPos():Distance(LocalPlayer():GetPos()) <= 300 && ply != LocalPlayer() then
 																									Sub_Menu_Give:AddOption(ply:Nick(),function()
@@ -274,7 +274,7 @@ function ReLoadInvList()
 
 													if v.Item != "item_expbarrel" || "item_barricade" then
 
-														Itembool_IconOptions:AddOption("Drop", function()
+														Itembool_IconOptions:AddOption(translate.Get("drop"), function()
 																									bool_IconOptions = false
 																									bool_CanClose = false
 																									RunConsoleCommand("inv_DropItem", v.Item, k,0)
@@ -507,7 +507,7 @@ function UpgradeMenu(wep)
 		gui_UpgradePowerButton:SetParent(gui_Upgframe)
 		gui_UpgradePowerButton:SetPos(150,112)
 		gui_UpgradePowerButton:SetSize(50,17)
-		gui_UpgradePowerButton:SetText("Upgrade")
+		gui_UpgradePowerButton:SetText(translate.Get("upgrade"))
 		gui_UpgradePowerButton.DoClick = function(gui_UpgradePowerButton)
 			if intPowerLevel < table.Count(GAMEMODE.Weapons[string_CurUpgItem].UpGrades.Power) then
 				RunConsoleCommand("inv_UpgradeWeapon",string_CurUpgItem,"Power")
@@ -518,7 +518,7 @@ function UpgradeMenu(wep)
 		gui_UpgradeAccuracyButton:SetParent(gui_Upgframe)
 		gui_UpgradeAccuracyButton:SetPos(150,142)
 		gui_UpgradeAccuracyButton:SetSize(50,17)
-		gui_UpgradeAccuracyButton:SetText("Upgrade")
+		gui_UpgradeAccuracyButton:SetText(translate.Get("upgrade"))
 		gui_UpgradeAccuracyButton.DoClick = function(gui_UpgradeAccuracyButton)
 		if intAccuracyLevel < table.Count(GAMEMODE.Weapons[string_CurUpgItem].UpGrades.Accuracy) then
 				RunConsoleCommand("inv_UpgradeWeapon",string_CurUpgItem,"Accuracy")
@@ -529,7 +529,7 @@ function UpgradeMenu(wep)
 		gui_UpgradeClipSizeButton:SetParent(gui_Upgframe)
 		gui_UpgradeClipSizeButton:SetPos(150,172)
 		gui_UpgradeClipSizeButton:SetSize(50,17)
-		gui_UpgradeClipSizeButton:SetText("Upgrade")
+		gui_UpgradeClipSizeButton:SetText(translate.Get("upgrade"))
 		gui_UpgradeClipSizeButton.DoClick = function(gui_UpgradeClipSizeButton)
 			if intClipSizeLevel < table.Count(GAMEMODE.Weapons[string_CurUpgItem].UpGrades.ClipSize) then
 				RunConsoleCommand("inv_UpgradeWeapon",string_CurUpgItem,"ClipSize")
@@ -540,7 +540,7 @@ function UpgradeMenu(wep)
 		gui_UpgradeFiringSpeedButton:SetParent(gui_Upgframe)
 		gui_UpgradeFiringSpeedButton:SetPos(150,202)
 		gui_UpgradeFiringSpeedButton:SetSize(50,17)
-		gui_UpgradeFiringSpeedButton:SetText("Upgrade")
+		gui_UpgradeFiringSpeedButton:SetText(translate.Get("upgrade"))
 		gui_UpgradeFiringSpeedButton.DoClick = function(gui_UpgradeFiringSpeedButton)
 			if intFiringSpeedLevel < table.Count(GAMEMODE.Weapons[string_CurUpgItem].UpGrades.FiringSpeed) then
 				RunConsoleCommand("inv_UpgradeWeapon",string_CurUpgItem,"FiringSpeed")
@@ -551,7 +551,7 @@ function UpgradeMenu(wep)
 		gui_UpgradeFiringSpeedButton:SetParent(gui_Upgframe)
 		gui_UpgradeFiringSpeedButton:SetPos(150,202)
 		gui_UpgradeFiringSpeedButton:SetSize(50,17)
-		gui_UpgradeFiringSpeedButton:SetText("Upgrade")
+		gui_UpgradeFiringSpeedButton:SetText(translate.Get("upgrade"))
 		gui_UpgradeFiringSpeedButton.DoClick = function(gui_UpgradeFiringSpeedButton)
 			if intFiringSpeedLevel < table.Count(GAMEMODE.Weapons[string_CurUpgItem].UpGrades.FiringSpeed) then
 				RunConsoleCommand("inv_UpgradeWeapon",string_CurUpgItem,"FiringSpeed")
@@ -562,7 +562,7 @@ function UpgradeMenu(wep)
 		gui_UpgradeReloadSpeedButton:SetParent(gui_Upgframe)
 		gui_UpgradeReloadSpeedButton:SetPos(150,202)
 		gui_UpgradeReloadSpeedButton:SetSize(50,17)
-		gui_UpgradeReloadSpeedButton:SetText("Upgrade")
+		gui_UpgradeReloadSpeedButton:SetText(translate.Get("upgrade"))
 		gui_UpgradeReloadSpeedButton.DoClick = function(gui_UpgradeReloadSpeedButton)
 			if intReloadSpeedLevel < table.Count(GAMEMODE.Weapons[string_CurUpgItem].UpGrades.ReloadSpeed) then
 				RunConsoleCommand("UpgradeWeapon",string_CurUpgItem,"ReloadSpeed")
