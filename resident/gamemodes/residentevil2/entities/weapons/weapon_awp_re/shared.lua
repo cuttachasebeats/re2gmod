@@ -87,7 +87,7 @@ function SWEP:DrawHUD()
 			surface.SetDrawColor(255,255,255,255)
 			surface.DrawTexturedRect(ScrW()/2 - Size/2 ,ScrH()/2 - Size/2,Size,Size)
 
-			surface.SetDrawColor(tonumber(Options["Crosshairs"]["Red"]),tonumber(Options["Crosshairs"]["Green"]),tonumber(Options["Crosshairs"]["Blue"]),255)
+			surface.SetDrawColor(0,128,0,255)
 			surface.DrawLine(x-1,y,x+2,y)
 			surface.DrawLine(x,y-1,x,y+2)
 		end
