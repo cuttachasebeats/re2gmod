@@ -58,28 +58,28 @@ GM.Music = {
 
 GM.MerchantSounds = {
 	MerchantWelcome = {
-		"/08_whatayabuyin.mp3",
-		"/06_goodthingsonsale.mp3",
-		"/18_welcome.mp3",
-		"/03_rarethingsonsale.mp3",
+		"/08_whatayabuyin.wav",
+		"/06_goodthingsonsale.wav",
+		"/18_welcome.wav",
+		"/03_rarethingsonsale.wav",
 	},
 
 	MerchantBuy = {
-		"/04_isthatall.mp3",
-		"/01_thankyou.mp3",
-		"/10_ChicagoTypewriter.mp3",
-		"/11_MineThrower.mp3",
-		"/13_Punisher.mp3",
-		"/14_Red9.mp3",
-		"/15_BrokenButterfly.mp3",
+		"/04_isthatall.wav",
+		"/01_thankyou.wav",
+		"/10_ChicagoTypewriter.wav",
+		"/11_MineThrower.wav",
+		"/13_Punisher.wav",
+		"/14_Red9.wav",
+		"/15_BrokenButterfly.wav",
 	},
 
 	MerchantLeave = {
-		"/16_comebackanytime.mp3",
+		"/16_comebackanytime.wav",
 	},
 	
 	MerchantNoCash = {
-		"/05_notenoughcash.mp3",
+		"/05_notenoughcash.wav",
 	},
 
 }
