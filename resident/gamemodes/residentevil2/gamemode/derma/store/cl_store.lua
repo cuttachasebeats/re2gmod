@@ -102,10 +102,10 @@ function openStore()
                           RunConsoleCommand("inv_BuyItem",weapon)
                           local s = CreateSound(client, table.Random(GAMEMODE.MerchantSounds.MerchantBuy))
                           s:Play()
-                          s:ChangeVolume(0.2)
+                          s:ChangeVolume(1)
                           GlobalBuyGUIs = {GUI_Inventory_Panel}
                         else
-                          local s = CreateSound(client, "reg/merchant/notenoughcash.wav")
+                          local s = CreateSound(client, table.Random(GAMEMODE.MerchantSounds.MerchantNoCash))
                           s:Play()
                           s:ChangeVolume(0.2)
                         end

@@ -214,7 +214,7 @@ function GM:PlayerHurt(ply,attacker)
 			GAMEMODE:SetPlayerSpeed(ply,ply:GetNWInt("Speed"),ply:GetNWInt("Speed"))
 		end
 	end
-	if attacker:GetClass() == "snpc_shambler3" or (attacker:GetClass() == "snpc_zombie_dog" && GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier >= 7) or (attacker:GetClass() == "snpc_shamblerb2" && GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier >= 7) then
+	if attacker:GetClass() == "snpc_infected_s" or (attacker:GetClass() == "snpc_zombie_dog" && GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier >= 7) or (attacker:GetClass() == "snpc_shamblerb2" && GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier >= 7) then
 		local ResistChance = math.random(1,200)
 		if ResistChance >= ply:GetNWInt("Immunity") then
 			if !ply:GetNWBool("Infected") then

@@ -36,13 +36,13 @@ GM.Config.MaxInventorySlots = 8
 GM.Config.InitialInventorySlots = 6
 
 --Death Reward--
-GM.Config.DeathReward = 400
+GM.Config.DeathReward = 200
 
 --Auto Save--
 GM.Config.SaveFrequency = 60
 
 --Zombies--
-GM.Config.MaxZombies = 12
+GM.Config.MaxZombies = 22
 
 --Merchant Timer--
 GM.Config.MerchantTime = 120

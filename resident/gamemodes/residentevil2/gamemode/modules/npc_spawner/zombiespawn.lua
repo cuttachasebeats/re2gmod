@@ -29,7 +29,7 @@ function GM:SpawningZombies()
 					end
 					local Chance = math.random(0,300/GAMEMODE.ZombieData[GetGlobalString("RE2_Difficulty")].Modifier)
 					if !Blocked && NumZombies <= GAMEMODE.Config.MaxZombies then
-						if Chance <= 10 then
+						if Chance <= 11 then
 							local Zombie = "snpc_zombie_dog"
 							local ent = ents.Create(Zombie)
 							ent:SetPos(h:GetPos())
@@ -39,7 +39,7 @@ function GM:SpawningZombies()
 						end
 					end
 					if !Blocked && NumZombies <= GAMEMODE.Config.MaxZombies then
-						if Chance == 11 then
+						if Chance == 12 then
 							local Zombie = "snpc_zombie_nemesis"
 							local ent = ents.Create(Zombie)
 							ent:SetPos(h:GetPos())
@@ -49,8 +49,19 @@ function GM:SpawningZombies()
 						end
 					end
 					
+					if !Blocked && NumZombies <= GAMEMODE.Config.MaxZombies then
+						if Chance == 13 then
+							local Zombie = "snpc_shamblerb2"
+							local ent = ents.Create(Zombie)
+							ent:SetPos(h:GetPos())
+							ent:Spawn()
+							ent:SetHealth(math.random(50*GAMEMODE.ZombieData[GetGlobalString("RE2_Difficulty")].Modifier, 800*GAMEMODE.ZombieData[GetGlobalString("RE2_Difficulty")].Modifier))
+							NumZombies = NumZombies + 1
+						end
+					end
+					
 						if !Blocked && NumZombies <= GAMEMODE.Config.MaxZombies then
-						if Chance >= 13 then
+						if Chance >= 14 then
 						local ent = ents.Create("snpc_infected_s") --GAMEMODE.ZombieData.Zombies[math.random(1,#GAMEMODE.ZombieData.Zombies)])
 						local min = GAMEMODE.ZombieData[GetGlobalString("RE2_Difficulty")].ZombieHealth[GAMEMODE.int_DifficultyLevel]
 						local max = GAMEMODE.ZombieData[GetGlobalString("RE2_Difficulty")].ZombieMaxHealth[GAMEMODE.int_DifficultyLevel]

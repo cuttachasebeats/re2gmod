@@ -1,7 +1,7 @@
 function GM:BasePrep()
 	GAMEMODE:EstablishRules()
 
-	SetGlobalInt("Re2_CountDown", 120)
+	SetGlobalInt("Re2_CountDown", 90)
 	SetGlobalString( "Mode", "Merchant" )
 
 	GAMEMODE:SelectMusic(GetGlobalString("Mode"))
@@ -100,7 +100,7 @@ function GM:BaseEndGame()
 			GAMEMODE:Save(ply)
 		end
 	end)
-	timer.Simple(55,function()
+	timer.Simple(25,function()
 		for _,ply in pairs(player.GetAll()) do
 			GAMEMODE:Save(ply)
 		end

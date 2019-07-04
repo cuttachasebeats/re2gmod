@@ -38,7 +38,7 @@ GM.Items["item_herb"] = {
 	Name = "Green Herb",-- The Name
 	Angle = Angle(90,90,90),---- Allows for manual rotation on the display
 	Desc = "Heals Some wounds",-- The description
-	Model = "models/props_junk/watermelon01.mdl",-- The model
+	Model = "models/resident evil/item_herbgre.mdl",-- The model
 	-- what it does don't touch it.
 	Condition = function(ply,item)
 				local hp = ply:Health()
@@ -68,7 +68,7 @@ GM.Items["item_herb"] = {
 GM.Items["item_rherb"] = {
 	Name = "Red Herb",
 	Desc = "Chance To Cure Infection",
-	Model = "models/props_junk/watermelon01.mdl",
+	Model = "models/resident evil/item_herbred.mdl",
 	Condition = function(ply,item)
 				if !ply:GetNWBool("Infected") then
 					return false
@@ -83,8 +83,37 @@ GM.Items["item_rherb"] = {
 			ply:PrintMessage(HUD_PRINTTALK,"Infection Lowered")
 			ply:EmitSound("items/smallmedkit1.wav",110,100)
 
-			ply:AddStat("CuresUsed", 1)
+		end,
+	Price = 250,
+	Max = 2,
+	Num = 2,
+}
 
+GM.Items["item_bherb"] = {
+	Name = "Blue Herb",
+	Desc = "Little Of Both",
+	Model = "models/resident evil/item_herbblue.mdl",
+	Condition = function(ply,item)
+				if !ply:GetNWBool("Infected") then
+					return false
+				end
+				return true
+			end,
+	Function =
+		function(ply,item)
+			ply:SetNWBool("Infected", true)
+			ply:SetNWInt("InfectedPercent", 10)
+			ply:SetNWInt("Immunity", ply:GetNWInt("Immunity") + 10 )
+			ply:PrintMessage(HUD_PRINTTALK,"Infection Lowered")
+			ply:EmitSound("items/smallmedkit1.wav",110,100)
+			local hp = ply:Health()
+			if hp < ply:GetNWInt("MaxHP") then
+				ply:SetHealth(ply:Health() + 7)
+				if SERVER then
+					ply:SetNWInt("Speed",165)
+					GAMEMODE:SetPlayerSpeed(ply,ply:GetNWInt("Speed"),ply:GetNWInt("Speed"))
+				end
+			end
 		end,
 	Price = 250,
 	Max = 2,
@@ -561,19 +590,6 @@ GM.Items["item_ump"] =
 	Max = 1,
 	Num = 18,
 }
-GM.Items["item_deagle"] =
-{
-	Name = "Night Hawk .50C",
-	Desc = "Uses Magnum rounds",
-	Model = "models/weapons/w_pist_deagre.mdl",
-	Function =
-		function(ply)
-			ply:SelectWeapon("weapon_deagle_re")
-		end,
-	Price = 3750,
-	Max = 1,
-	Num = 19,
-}
 GM.Items["item_p228"] =
 {
 	Name = "Sig P-220",
@@ -737,6 +753,59 @@ GM.Items["item_bandolier"] =
 	Max = 1,
 	Num = 23,
 }
+
+GM.Items["item_m16a1"] =
+{
+	Name = "M16A1",
+	Desc = "A Nice rifle",
+	Model = "models/weapons/w_rif_nam.mdl",
+	Function =
+		function(ply)
+		ply:SelectWeapon("gdcw_m16a1_re")
+		end,
+	Price = 15000,
+	Max = 1,
+	Num = 24,
+}
+
+GM.Items["item_dgal50"] =
+{
+	Name = "50c Deagle",
+	Desc = "A Powerful Gun",
+	Model = "models/weapons/w_pist_dgal50.mdl",
+	Function =
+		function(ply)
+		ply:SelectWeapon("gdcw_dgal50_re")
+		end,
+	Price = 12000,
+	Max = 1,
+	Num = 25,
+}
+GM.Items["item_m249"] =
+{
+	Name = "M-249",
+	Desc = "150 rounds of death. Rip it up.",
+	Model = "models/weapons/w_minigun.mdl",
+	Function =
+		function(ply)
+		ply:SelectWeapon("gdcw_m-249saw_re")
+		end,
+	Price = 80000,
+	Max = 1,
+	Num = 26,
+}
+
+
+
+
+
+
+-----------------------TFA Guns
+
+
+
+
+
 
 -------------------------------------------------------------
 ---Special Items (explosives and stuff)------------------------

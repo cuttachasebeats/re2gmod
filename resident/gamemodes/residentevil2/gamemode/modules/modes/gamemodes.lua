@@ -20,7 +20,7 @@ GM.Gamemode = {}
 
 		StartFunction = function()
 							for _,ply in pairs(player.GetAll()) do
-								local modifier = math.Round(math.random(20,25) * GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier/1.33)
+								local modifier = math.Round(math.random(15,15) * GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier/1.33)
 								SetGlobalInt("DeadZombieKillNumber", GetGlobalInt("DeadZombieKillNumber") + modifier)
 							end
 					timer.Create("TimeSurvivedTimer",1,0, function()
