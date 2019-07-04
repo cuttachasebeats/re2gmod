@@ -381,6 +381,12 @@ function ENT:FindEnemy()
 			end
 		end
 	end
+	
+		for key, ent in pairs(ents.FindInSphere(self:GetPos(), 35)) do
+			if (IsValid(ent) && self:CheckProp(ent)) then
+				self:Melee(ent)
+			end
+		end
 
 	return closest_target
 	
@@ -559,10 +565,7 @@ function ENT:ChaseEnemy( options )
 		
 		for key, ent in pairs(ents.FindInSphere(self:GetPos(), 35)) do
 			if IsValid(ent) then
-			if ent:GetCollisionGroup() == COLLISION_GROUP_DEBRIS then return false end
 				if ent:IsPlayer() && self:GetRangeTo( ent ) < self.MeleeRange then
-				self:Melee(ent)
-				elseif ( ent:GetClass() == "func_breakable" || ent:GetClass() == "func_physbox" || ent:GetClass() == "prop_physics_multiplayer" || ent:GetClass() == "prop_physics" ) and !ent.FalseProp then
 				self:Melee(ent)
 				end
 			end

@@ -48,7 +48,7 @@ ENT.ShootRange = 30
 ENT.MeleeRange = 50
 ENT.StopRange = 20
 
-ENT.MeleeDamage = 5
+ENT.MeleeDamage = 10
 ENT.MeleeDamageType = DMG_SLASH
 
 ENT.MeleeDamageForce = Vector( math.random( ENT.MeleeDamage, ENT.MeleeDamage, ENT.MeleeDamage ) )
