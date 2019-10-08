@@ -148,12 +148,12 @@ LANGUAGE.expbarrel                           = "Взрывоопасная Бо�
 LANGUAGE.expbarrel_desk                      = "Прочти название!"
 
 --Weapons
-LANGUAGE.pistol_ammo_use                     = "Использует пистолетные патроны"
-LANGUAGE.rifle_ammo_use                      = "Использует винтовочные патроны"
-LANGUAGE.automatic_ammo_use                  = "Использует автомат. патроны"
-LANGUAGE.shotgun_ammo_use                    = "Использует картечные патроны"
-LANGUAGE.magnum_ammo_use                     = "Использует патроны магнума"
-LANGUAGE.sniper_ammo_use                     = "Использует снайперские патроны"
+LANGUAGE.pistol_ammo_use                     = "Использ. писто-ые патроны"
+LANGUAGE.rifle_ammo_use                      = "Использ. винто-ые патроны"
+LANGUAGE.automatic_ammo_use                  = "Использ. автомат. патроны"
+LANGUAGE.shotgun_ammo_use                    = "Использует картечь"
+LANGUAGE.magnum_ammo_use                     = "Испол. патр. магнума"
+LANGUAGE.sniper_ammo_use                     = "Использ. снайп-ие патроны"
 LANGUAGE.pistol_9mm                          = "9мм Пистолет"
 LANGUAGE.m4a1                                = "M4a1"
 LANGUAGE.p90                                 = "P90"
