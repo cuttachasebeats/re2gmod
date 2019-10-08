@@ -3,6 +3,16 @@ Weapons = {}
 -- Weapons List
 -- The upgrades tables might be in order
 
+
+-- tfa guns --
+Weapons["item_m16a1"] = {Weapon = "gdcw_m16a1_re"}
+Weapons["item_dgal50"] = {Weapon = "gdcw_dgal50_re"}
+Weapons["item_m249"] = {Weapon = "gdcw_m-249saw_re"}
+
+
+
+
+------------------------------------------------------
 Weapons["item_9mmhandgun"] = {Weapon = "weapon_9mm_re"}
 Weapons["item_m4"] = {Weapon = "weapon_m4_re"}
 Weapons["item_p90"] = {Weapon = "weapon_p90_re"}
@@ -15,7 +25,6 @@ Weapons["item_ragerev"] = {Weapon = "weapon_ragerevolver_re"}
 Weapons["item_p228"] = {Weapon = "weapon_p228_re"}
 Weapons["item_ak47"] = {Weapon = "weapon_ak47_re"}
 Weapons["item_ump"] = {Weapon = "weapon_ump_re"}
-Weapons["item_deagle"] = {Weapon = "weapon_deagle_re"}
 --
 Weapons["item_awp"] = {Weapon = "weapon_awp_re"}
 
@@ -31,6 +40,133 @@ UpgPrices = {}
 UpgradeLevels = {}
 
 GM.Weapons = {}
+-----------------------TFA Guns
+GM.Weapons["item_m16a1"] = {
+	Weapon = "gdcw_m16a1_re",
+	Item = "item_m16a1",
+	AmmoTypes = {{item = "item_ammo_rifle",Icon = "gui 	/ammo/rifle"}},
+	Position = Vector(-3, 0, 3.5),
+	Angle = Angle(0, 180, 0),
+	Recoil = 0.75,
+	IMultiplier = 0.75,
+	UpGrades = {
+		Power = {{Price = 300, Level = 27},
+				{Price = 1500, Level = 29},
+				{Price = 2500, Level = 30},
+				{Price = 4000, Level = 32},
+				{Price = 12000, Level = 33},
+				{Price = 18000, Level = 37},
+				{Price = 26000, Level = 40},
+				{Price = 32000, Level = 44},
+				{Price = 42000, Level = 49},
+				{Price = 52000, Level = 52},},
+		Accuracy = {{Price = 600, Level = 0.08},
+				{Price = 1500, Level = 0.06},
+				{Price = 3000, Level = 0.05},
+				{Price = 6000, Level = 0.04},},
+		ClipSize = {{Price = 100, Level = 30},
+				{Price = 1300, Level = 35},
+				{Price = 2000, Level = 40},
+				{Price = 2600, Level = 45},},
+		FiringSpeed = {{Price = 400, Level = 1},
+				{Price = 1400, Level = 10},
+				{Price = 2200, Level = 15},
+				{Price = 3100, Level = 20},
+				{Price = 10100, Level = 25},
+				{Price = 20100, Level = 30},
+				{Price = 30100, Level = 35},},
+		ReloadSpeed = {{Price = 800, Level = 5},
+				{Price = 1200, Level = 4},
+				{Price = 2200, Level = 3},},
+	},
+}
+
+GM.Weapons["item_dgal50"] = {
+	Weapon = "gdcw_dgal50_re",
+	Item = "item_dgal50",
+	AmmoTypes = {{item = "item_ammo_magnum",Icon = "gui/ammo/357"}},
+	Position = Vector(-3, 0, 3.5),
+	Angle = Angle(0, 180, 0),
+	Recoil = 0.75,
+	IMultiplier = 0.75,
+	UpGrades = {
+		Power = {{Price = 100, Level = 68},
+				{Price = 1500, Level = 74},
+				{Price = 2500, Level = 86},
+				{Price = 4000, Level = 95},
+				{Price = 8000, Level = 105},
+				{Price = 20000, Level = 115},
+				{Price = 25000, Level = 125},
+				{Price = 30000, Level = 135},
+				{Price = 35000, Level = 145},
+				{Price = 40000, Level = 155},
+				{Price = 45000, Level = 165},
+				{Price = 50000, Level = 175},
+				{Price = 55000, Level = 185},
+				{Price = 65000, Level = 195},
+				{Price = 75000, Level = 205},
+				{Price = 85000, Level = 215},
+				{Price = 95000, Level = 225},},
+		Accuracy = {{Price = 100, Level = 0.04},
+				{Price = 1500, Level = 0.035},
+				{Price = 9500, Level = 0.025},},
+		ClipSize = {{Price = 100, Level = 7},
+				{Price = 1300, Level = 8},
+				{Price = 2000, Level = 9},
+				{Price = 2600, Level = 10},
+				{Price = 4600, Level = 11},
+				{Price = 6600, Level = 12},},
+		FiringSpeed = {{Price = 100, Level = 1},
+				{Price = 1400, Level = 10},},
+		ReloadSpeed = {{Price = 400, Level = 4},
+				{Price = 1000, Level = 3},
+				{Price = 2000, Level = 2},
+				{Price = 5000, Level = 1},},
+	},
+}
+
+GM.Weapons["item_m249"] = {
+	Weapon = "gdcw_m-249saw_re",
+	Item = "item_m249",
+	AmmoTypes = {{item = "item_bandolier",Icon = "gui/ammo/minigun"}},
+	UpGrades = {
+		Power = {{Price = 0, Level = 50},
+				{Price = 3500, Level = 55},
+				{Price = 5500, Level = 60},
+				{Price = 7000, Level = 65},
+				{Price = 14000, Level = 70},
+				{Price = 21000, Level = 75},
+				{Price = 28000, Level = 80},
+				{Price = 35000, Level = 85},},
+		Accuracy = {{Price = 0, Level = 0.10},
+				{Price = 2500, Level = 0.09},
+				{Price = 3000, Level = 0.08},
+				{Price = 4000, Level = 0.07},},
+		ClipSize = {{Price = 0, Level = 150},},
+		FiringSpeed = {{Price = 0, Level = 0.1},
+				{Price = 1400, Level = 0.09},
+				{Price = 2200, Level = 0.08},
+				{Price = 10200, Level = 0.07},},
+		ReloadSpeed = {{Price = 400, Level = 5},},
+	},
+	Size = 1,
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------Main Start Guns
 GM.Weapons["item_9mmhandgun"] = {
 	Weapon = "weapon_9mm_re",
 	Item = "item_9mmhandgun",
@@ -80,6 +216,8 @@ GM.Weapons["item_9mmhandgun"] = {
 				{Price = 10000, Level = 1.9},},
 	},
 }
+
+
 
 GM.Weapons["item_p228"] = {
 	Weapon = "weapon_p228_re",
@@ -164,52 +302,6 @@ GM.Weapons["item_glock18"] = {
 				{Price = 1000, Level = 2.3},
 				{Price = 1000, Level = 2.2},
 				{Price = 4000, Level = 2.0},},
-	},
-}
-
-
------ MAGNUMS
-GM.Weapons["item_deagle"] = {
-	Weapon = "weapon_deagle_re",
-	Item = "item_deagle",
-	AmmoTypes = {{item = "item_ammo_magnum",Icon = "gui/ammo/357"}},
-	Position = Vector(-3, 0, 3.5),
-	Angle = Angle(0, 180, 0),
-	Recoil = 0.75,
-	IMultiplier = 0.75,
-	UpGrades = {
-		Power = {{Price = 100, Level = 68},
-				{Price = 1500, Level = 74},
-				{Price = 2500, Level = 86},
-				{Price = 4000, Level = 95},
-				{Price = 8000, Level = 105},
-				{Price = 20000, Level = 115},
-				{Price = 25000, Level = 125},
-				{Price = 30000, Level = 135},
-				{Price = 35000, Level = 145},
-				{Price = 40000, Level = 155},
-				{Price = 45000, Level = 165},
-				{Price = 50000, Level = 175},
-				{Price = 55000, Level = 185},
-				{Price = 65000, Level = 195},
-				{Price = 75000, Level = 205},
-				{Price = 85000, Level = 215},
-				{Price = 95000, Level = 225},},
-		Accuracy = {{Price = 100, Level = 0.04},
-				{Price = 1500, Level = 0.035},
-				{Price = 9500, Level = 0.025},},
-		ClipSize = {{Price = 100, Level = 7},
-				{Price = 1300, Level = 8},
-				{Price = 2000, Level = 9},
-				{Price = 2600, Level = 10},
-				{Price = 4600, Level = 11},
-				{Price = 6600, Level = 12},},
-		FiringSpeed = {{Price = 100, Level = 0.3},
-				{Price = 1400, Level = 0.2},},
-		ReloadSpeed = {{Price = 400, Level = 1.9},
-				{Price = 1000, Level = 1.7},
-				{Price = 2000, Level = 1.6},
-				{Price = 5000, Level = 1.5},},
 	},
 }
 
@@ -592,7 +684,11 @@ GM.Weapons["item_striker7"] = {
 				{Price = 20000, Level = 16},
 				{Price = 24000, Level = 17},
 				{Price = 28000, Level = 18},
-				{Price = 40000, Level = 20},},
+				{Price = 40000, Level = 20},
+				{Price = 40000, Level = 23},
+				{Price = 40000, Level = 26},
+				{Price = 50000, Level = 30},
+				{Price = 50000, Level = 50},},
 		Accuracy = {{Price = 600, Level = 0.13},},
 		ClipSize = {{Price = 100, Level = 8},
 				{Price = 1300, Level = 9},

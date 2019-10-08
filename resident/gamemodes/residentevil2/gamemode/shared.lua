@@ -58,17 +58,28 @@ GM.Music = {
 
 GM.MerchantSounds = {
 	MerchantWelcome = {
-		"reg/merchant/welcome.wav",
-		"reg/merchant/whatayabuyin.wav",
+		"/08_whatayabuyin.wav",
+		"/06_goodthingsonsale.wav",
+		"/18_welcome.wav",
+		"/03_rarethingsonsale.wav",
 	},
 
 	MerchantBuy = {
-		"reg/merchant/isthatall.wav",
-		"reg/merchant/thankyou.wav",
+		"/04_isthatall.wav",
+		"/01_thankyou.wav",
+		"/10_ChicagoTypewriter.wav",
+		"/11_MineThrower.wav",
+		"/13_Punisher.wav",
+		"/14_Red9.wav",
+		"/15_BrokenButterfly.wav",
 	},
 
 	MerchantLeave = {
-		"reg/merchant/comebackanytime.wav",
+		"/16_comebackanytime.wav",
+	},
+	
+	MerchantNoCash = {
+		"/05_notenoughcash.wav",
 	},
 
 }
@@ -95,20 +106,20 @@ include("translate.lua")
 ------------------Ammo Maxes------------------------------
 
 GM.AmmoMax = {}
-GM.AmmoMax["pistol"] = {number = 110,icon = "gui/ammo/handgun"}
+GM.AmmoMax["pistol"] = {number = 150,icon = "gui/ammo/handgun"}
 GM.AmmoMax["pistol2"] = {number = 110,icon = "gui/ammo/handgun"}
-GM.AmmoMax["ar2"] = {number = 90,icon = "gui/ammo/rifle"}
-GM.AmmoMax["357"] = {number = 60,icon = "gui/ammo/357"}
-GM.AmmoMax["smg1"] = {number = 120,icon = "gui/ammo/machinegun"}
+GM.AmmoMax["ar2"] = {number = 135,icon = "gui/ammo/rifle"}
+GM.AmmoMax["357"] = {number = 72,icon = "gui/ammo/357"}
+GM.AmmoMax["smg1"] = {number = 200,icon = "gui/ammo/machinegun"}
 GM.AmmoMax["none"] = {number = 0,icon = ""}
-GM.AmmoMax["buckshot"] = {number = 25,icon = "gui/ammo/buckshot"}
-GM.AmmoMax["CombineCannon"] = {number = 6,icon = "gui/ammo/explosive"}
-GM.AmmoMax["GaussEnergy"] = {number = 6,icon = "gui/ammo/flame"}
-GM.AmmoMax["Battery"] = {number = 6,icon = "gui/ammo/ice"}
-GM.AmmoMax["RPG_Round"] = {number = 4,icon = "gui/ammo/rocket"}
-GM.AmmoMax["StriderMinigun"] = {number = 200,icon = "gui/ammo/minigun"}
+GM.AmmoMax["buckshot"] = {number = 35,icon = "gui/ammo/buckshot"}
+GM.AmmoMax["CombineCannon"] = {number = 7,icon = "gui/ammo/explosive"}
+GM.AmmoMax["GaussEnergy"] = {number = 7,icon = "gui/ammo/flame"}
+GM.AmmoMax["Battery"] = {number = 7,icon = "gui/ammo/ice"}
+GM.AmmoMax["RPG_Round"] = {number = 5,icon = "gui/ammo/rocket"}
+GM.AmmoMax["StriderMinigun"] = {number = 400,icon = "gui/ammo/minigun"}
 
-GM.AmmoMax["XBowBolt"] = {number = 50,icon = "gui/ammo/sniper"}
+GM.AmmoMax["XBowBolt"] = {number = 70,icon = "gui/ammo/sniper"}
 
 GM.Ammoref = {}
 GM.Ammoref["item_ammo_pistol"] = "pistol"
@@ -179,28 +190,7 @@ function HoveringNames()
 			
 		end 
 	end 
-	for k, v in pairs (ents.GetAll()) do 
-		if v:GetClass() == "snpc_wesker" then 
-			local targetPos = v:GetPos() + Vector(0,0,84)
-			local tt = v:GetPos() + Vector(0,0,100)
-			local targetDistance = math.floor((LocalPlayer():GetPos():Distance( targetPos ))/40)
-			local targetScreenpos = targetPos:ToScreen()
-			local ttscreen = tt:ToScreen()
-			draw.SimpleText(v:Health(), "Trebuchet18", tonumber(targetScreenpos.x), tonumber(ttscreen.y), Color(255,255,25,100), TEXT_ALIGN_CENTER)
-			
-		end 
-	end 
-	for k, v in pairs (ents.GetAll()) do 
-		if v:GetClass() == "npc_re_tyrant2" then 
-			local targetPos = v:GetPos() + Vector(0,0,84)
-			local tt = v:GetPos() + Vector(0,0,100)
-			local targetDistance = math.floor((LocalPlayer():GetPos():Distance( targetPos ))/40)
-			local targetScreenpos = targetPos:ToScreen()
-			local ttscreen = tt:ToScreen()
-			draw.SimpleText(v:Health(), "Trebuchet18", tonumber(targetScreenpos.x), tonumber(ttscreen.y), Color(255,255,25,100), TEXT_ALIGN_CENTER)
-			
-		end 
-	end 
+
 end
 hook.Add("HUDPaint", "HoveringNames", HoveringNames)
 
@@ -255,7 +245,7 @@ GM.MapListTable = {	}
 
 GM.MapListTable["re2_warehouse"] = {Votable = true,}
 
-GM.MapListTable["re2_mainhall"] = {Votable = true,}
+--GM.MapListTable["re2_mainhall"] = {Votable = true,}
 
 GM.MapListTable["re2_ambush"] = {Votable = true,}
 

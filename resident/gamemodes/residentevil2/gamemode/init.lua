@@ -7,9 +7,16 @@ resource.AddWorkshop("531432505") -- remapscustom
 resource.AddWorkshop("548706398") -- Nemesis Playermodel FIXED
 resource.AddWorkshop("458351576") -- RE6 Lepotitsa Mod
 resource.AddWorkshop("407279258") -- RE4 Regenerator and Iron Maiden Mod
+resource.AddWorkshop("626604673") -- Automatic Workshop Download
+resource.AddWorkshop("150332042") -- Resident Evil REmake weapons
 resource.AddWorkshop("1477916884") -- RE2 Alleys
-resource.AddWorkshop("150332042")
-resource.AddWorkshop("1502859898")
+resource.AddWorkshop("1502859898") -- RE2_ThePark
+resource.AddWorkshop("299164995") -- [OLD] Call Of Duty: Black Ops II Weapons Pack
+resource.AddWorkshop("1575698656") -- Infected Citizens (Nextbot 3.0)
+resource.AddWorkshop("1551750003") -- NEXTBOTS 3.0: Zombies, Humans, SWEPs
+resource.AddWorkshop("415143062") -- TFA Base [ Reduxed ]
+resource.AddWorkshop("757604550") -- [wOS] Animation Extension - Base
+resource.AddWorkshop("1788282418") -- RE4 Merchant SFX
 
 function GM:Initialize()
 	SetGlobalString( "Mode", "Merchant" )

@@ -5,9 +5,7 @@ function openStore()
   if GetGlobalString("Mode") != "Merchant" && LocalPlayer():Team() == TEAM_HUNK  then return end
   local client = LocalPlayer()
   local SW,SH = ScrW(),ScrH()
-  local s = CreateSound(client, table.Random(GAMEMODE.MerchantSounds.MerchantWelcome))
-  s:Play()
-  s:ChangeVolume(0.2)
+  surface.PlaySound( table.Random(GAMEMODE.MerchantSounds.MerchantWelcome) )
 
   local GUI_Property_Sheet = vgui.Create("DPropertySheet")
   GUI_Property_Sheet:SetParent(StoreBase)
@@ -100,14 +98,10 @@ function openStore()
     GUI_Weapon_BuyItem_Button.DoClick = function(GUI_Weapon_BuyItem_Button)
                         if client:GetNWInt("Money") >= tonumber(GAMEMODE.Items[data.Item].Price) then
                           RunConsoleCommand("inv_BuyItem",weapon)
-                          local s = CreateSound(client, table.Random(GAMEMODE.MerchantSounds.MerchantBuy))
-                          s:Play()
-                          s:ChangeVolume(0.2)
+                          surface.PlaySound( table.Random(GAMEMODE.MerchantSounds.MerchantBuy) )
                           GlobalBuyGUIs = {GUI_Inventory_Panel}
                         else
-                          local s = CreateSound(client, "reg/merchant/notenoughcash.wav")
-                          s:Play()
-                          s:ChangeVolume(0.2)
+                          surface.PlaySound( table.Random(GAMEMODE.MerchantSounds.MerchantNoCash) )
                         end
                       end
 
@@ -137,14 +131,10 @@ function openStore()
         GUI_Weapon_BuyAmmo_Button:SetText(translate.Get("buy_for").." $"..GAMEMODE.Items[AmmoType.item].Price)
         GUI_Weapon_BuyAmmo_Button.DoClick = function(GUI_Weapon_BuyAmmo_Button)
                             if client:GetNWInt("Money") >= tonumber(GAMEMODE.Items[AmmoType.item].Price) then
-                              RunConsoleCommand("inv_BuyItem",AmmoType.item)
-                              local s = CreateSound(client, table.Random(GAMEMODE.MerchantSounds.MerchantBuy))
-                              s:Play()
-                              s:ChangeVolume(0.2)
-                            else
-                              local s = CreateSound(client, "reg/merchant/notenoughcash.wav")
-                              s:Play()
-                              s:ChangeVolume(0.2)
+								RunConsoleCommand("inv_BuyItem",AmmoType.item)
+								surface.PlaySound( table.Random(GAMEMODE.MerchantSounds.MerchantBuy) )
+							else
+								surface.PlaySound( table.Random(GAMEMODE.MerchantSounds.MerchantNoCash) )
                             end
                           end
 
@@ -404,13 +394,9 @@ function openStore()
       GUI_Item_BuyItem_Button.DoClick = function(GUI_Item_BuyItem_Button)
                         if client:GetNWInt("Money") >= tonumber(GAMEMODE.Items[item].Price) then
                           RunConsoleCommand("inv_BuyItem",item)
-                          local s = CreateSound(client, table.Random(GAMEMODE.MerchantSounds.MerchantBuy))
-                          s:Play()
-                          s:ChangeVolume(0.2)
+                          surface.PlaySound( table.Random(GAMEMODE.MerchantSounds.MerchantBuy) )
                         else
-                          local s = CreateSound(client, "reg/merchant/notenoughcash.wav")
-                          s:Play()
-                          s:ChangeVolume(0.2)
+                          surface.PlaySound( table.Random(GAMEMODE.MerchantSounds.MerchantNoCash) )
                         end
                       end
 

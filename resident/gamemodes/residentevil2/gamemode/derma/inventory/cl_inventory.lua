@@ -43,11 +43,11 @@ net.Receive("RE2_UpdateChestSlot", function()
 
 	local weapon = net.ReadString()
 	local slot = net.ReadInt(16)
-	local pwrlvl = net.ReadTable()
-	local acclvl = net.ReadTable()
-	local clplvl = net.ReadTable()
-	local fislvl = net.ReadTable()
-	local reslvl = net.ReadTable()
+	local pwrlvl = net.ReadString()
+	local acclvl = net.ReadString()
+	local clplvl = net.ReadString()
+	local fislvl = net.ReadString()
+	local reslvl = net.ReadString()
 
 	Chest[slot].Weapon = weapon
 	Chest[slot]["Upgrades"].pwrlvl = tonumber(pwrlvl)

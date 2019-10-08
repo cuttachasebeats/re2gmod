@@ -83,8 +83,37 @@ GM.Items["item_rherb"] = {
 			ply:PrintTranslatedMessage(HUD_PRINTTALK, "infection_lowered")
 			ply:EmitSound("items/smallmedkit1.wav",110,100)
 
-			ply:AddStat("CuresUsed", 1)
+		end,
+	Price = 250,
+	Max = 2,
+	Num = 2,
+}
 
+GM.Items["item_bherb"] = {
+	Name = "Blue Herb",
+	Desc = "Little Of Both",
+	Model = "models/resident evil/item_herbblue.mdl",
+	Condition = function(ply,item)
+				if !ply:GetNWBool("Infected") then
+					return false
+				end
+				return true
+			end,
+	Function =
+		function(ply,item)
+			ply:SetNWBool("Infected", true)
+			ply:SetNWInt("InfectedPercent", 10)
+			ply:SetNWInt("Immunity", ply:GetNWInt("Immunity") + 10 )
+			ply:PrintMessage(HUD_PRINTTALK,"Infection Lowered")
+			ply:EmitSound("items/smallmedkit1.wav",110,100)
+			local hp = ply:Health()
+			if hp < ply:GetNWInt("MaxHP") then
+				ply:SetHealth(ply:Health() + 7)
+				if SERVER then
+					ply:SetNWInt("Speed",165)
+					GAMEMODE:SetPlayerSpeed(ply,ply:GetNWInt("Speed"),ply:GetNWInt("Speed"))
+				end
+			end
 		end,
 	Price = 250,
 	Max = 2,
@@ -737,6 +766,59 @@ GM.Items["item_bandolier"] =
 	Max = 1,
 	Num = 23,
 }
+
+GM.Items["item_m16a1"] =
+{
+	Name = "M16A1",
+	Desc = "A Nice rifle",
+	Model = "models/weapons/w_rif_nam.mdl",
+	Function =
+		function(ply)
+		ply:SelectWeapon("gdcw_m16a1_re")
+		end,
+	Price = 15000,
+	Max = 1,
+	Num = 24,
+}
+
+GM.Items["item_dgal50"] =
+{
+	Name = "50c Deagle",
+	Desc = "A Powerful Gun",
+	Model = "models/weapons/w_pist_dgal50.mdl",
+	Function =
+		function(ply)
+		ply:SelectWeapon("gdcw_dgal50_re")
+		end,
+	Price = 12000,
+	Max = 1,
+	Num = 25,
+}
+GM.Items["item_m249"] =
+{
+	Name = "M-249",
+	Desc = "150 rounds of death. Rip it up.",
+	Model = "models/weapons/w_minigun.mdl",
+	Function =
+		function(ply)
+		ply:SelectWeapon("gdcw_m-249saw_re")
+		end,
+	Price = 80000,
+	Max = 1,
+	Num = 26,
+}
+
+
+
+
+
+
+-----------------------TFA Guns
+
+
+
+
+
 
 -------------------------------------------------------------
 ---Special Items (explosives and stuff)------------------------

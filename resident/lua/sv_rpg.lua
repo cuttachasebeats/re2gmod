@@ -100,7 +100,7 @@ function RPG:EntityTakeDamage( ent, info )
 	
 	local iscrit
 	
-	if ( ent:IsNPC( ) or ent:GetClass() == "snpc_shambler3" or ent:GetClass() == "snpc_wesker" or ent:GetClass() == "snpc_zombie_dog" or ent:GetClass() == "snpc_shambler" or ent:GetClass() == "snpc_zombie_nemesis" or ent:GetClass() == "snpc_zombie_king" or ent:GetClass() == "snpc_zombie_jeff" or self.SpecialTreatment[ ent:GetClass( ) ] ) and ent:Health( ) > 0 then
+	if ( ent:IsNPC( ) or ent:GetClass() == "snpc_infected_s" or ent:GetClass() == "snpc_wesker" or ent:GetClass() == "snpc_zombie_dog" or ent:GetClass() == "snpc_shambler" or ent:GetClass() == "snpc_zombie_nemesis" or ent:GetClass() == "snpc_zombie_king" or ent:GetClass() == "snpc_zombie_jeff" or self.SpecialTreatment[ ent:GetClass( ) ] ) and ent:Health( ) > 0 then
 		if ent.DefenseMul then
 			info:ScaleDamage( 1 / ent.DefenseMul )
 		end
