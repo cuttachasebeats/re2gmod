@@ -162,7 +162,7 @@ function GM:DoPlayerDeath(ply,attacker,dmginfo)
 end
 
 function GM:CanPlayerSuicide( ply )
-	ply:PrintMessage(HUD_PRINTTALK, "You can't suicide!")
+	ply:PrintTranslatedMessage(HUD_PRINTTALK, "cant_suicide")
 	return true
 end
 

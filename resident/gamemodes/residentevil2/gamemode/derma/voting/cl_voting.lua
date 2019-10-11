@@ -39,7 +39,7 @@ function openVote()
     			GUI_Map_List_Menu:SetSize(VoteBackground:GetWide()*.2,VoteBackground:GetTall()*.96)
     			GUI_Map_List_Menu:SetPos(VoteBackground:GetWide()*.01,VoteBackground:GetTall()*.02)
     			GUI_Map_List_Menu:SetMultiSelect(false)
-    			GUI_Map_List_Menu:AddColumn("Select A Map")
+    			GUI_Map_List_Menu:AddColumn(translate.Get("select_map"))
 
     			for k,v in pairs(GAMEMODE.MapListTable) do
     				if v.Escape == nil then
@@ -58,24 +58,24 @@ function openVote()
 
     			local GUI_Difficulty_Label = vgui.Create("DLabel")
           GUI_Difficulty_Label:SetFont("font large")
-    			GUI_Difficulty_Label:SetText("Difficulty")
+    			GUI_Difficulty_Label:SetText(translate.Get("difficulty_vote"))
     			GUI_Difficulty_Label:SizeToContents()
     			GUI_Difficulty_Label:SetPos(VoteBackground:GetWide()*.725,VoteBackground:GetTall()*.01)
     			GUI_Difficulty_Label:SetParent(VoteBackground)
 
 
     			local GUI_Difficulty = vgui.Create( "DListView" )
-    			GUI_Difficulty:AddColumn("Difficulty")
+    			GUI_Difficulty:AddColumn(translate.Get("difficulty_vote"))
     			GUI_Difficulty:SetParent(VoteBackground)
     			GUI_Difficulty:SetMultiSelect( false )
 
-    			local easy = GUI_Difficulty:AddLine( "Easy" ) -- Add our options
-    			local norm = GUI_Difficulty:AddLine( "Normal" )
-    			local diff = GUI_Difficulty:AddLine( "Difficult" )
-    			local exp = GUI_Difficulty:AddLine( "Expert" )
-    			local suc = GUI_Difficulty:AddLine( "Suicidal" )
-    			local dth = GUI_Difficulty:AddLine( "Death" )
-    			local rcc = GUI_Difficulty:AddLine( "RacoonCity" )
+    			local easy = GUI_Difficulty:AddLine( translate.Get("easy") ) -- Add our options
+    			local norm = GUI_Difficulty:AddLine( translate.Get("normal") )
+    			local diff = GUI_Difficulty:AddLine( translate.Get("difficult") )
+    			local exp = GUI_Difficulty:AddLine( translate.Get("expert") )
+    			local suc = GUI_Difficulty:AddLine( translate.Get("suicidal") )
+    			local dth = GUI_Difficulty:AddLine( translate.Get("death") )
+    			local rcc = GUI_Difficulty:AddLine( translate.Get("racooncity") )
 
     			GUI_Difficulty:SetSize(VoteBackground:GetWide()*.15,VoteBackground:GetTall()*.25)
     			GUI_Difficulty:SetPos(VoteBackground:GetWide()*.7,VoteBackground:GetTall()*.05)
@@ -101,7 +101,7 @@ function openVote()
 
     			local GUI_Gamemode_Label = vgui.Create("DLabel")
           GUI_Gamemode_Label:SetFont("font large")
-    			GUI_Gamemode_Label:SetText("Gamemode")
+    			GUI_Gamemode_Label:SetText(translate.Get("gamemode"))
     			GUI_Gamemode_Label:SizeToContents()
     			GUI_Gamemode_Label:SetPos(VoteBackground:GetWide()*.4,VoteBackground:GetTall()*.01)
     			GUI_Gamemode_Label:SetParent(VoteBackground)
@@ -177,7 +177,7 @@ function openVote()
     			local GUI_Difficulty_Vote_Label = vgui.Create("DLabel")
 
     			function GUI_Difficulty_Vote_Label:Think()
-    				GUI_Difficulty_Vote_Label:SetText("You selected "..VoteOption["Difficulty"].." for the next difficulty.")
+    				GUI_Difficulty_Vote_Label:SetText(translate.Get("you_selected").." "..VoteOption["Difficulty"].." "..translate.Get("for_next_dificulty"))
     			end
 
     			GUI_Difficulty_Vote_Label:SetSize( 260,20 )
@@ -187,7 +187,7 @@ function openVote()
     			local GUI_Map_Vote_Label = vgui.Create("DLabel")
 
     			function GUI_Map_Vote_Label:Think()
-    				GUI_Map_Vote_Label:SetText("You selected "..VoteOption["Map"].." for the next map.")
+    				GUI_Map_Vote_Label:SetText(translate.Get("you_selected").." "..VoteOption["Map"].." "..translate.Get("for_next_map"))
     			end
 
     			GUI_Map_Vote_Label:SetSize( 260,20 )
@@ -197,7 +197,7 @@ function openVote()
     			local GUI_Gamemode_Vote_Label = vgui.Create("DLabel")
 
     			function GUI_Gamemode_Vote_Label:Think()
-    				GUI_Gamemode_Vote_Label:SetText("You selected "..VoteOption["Game"].." for the next gamemode.")
+    				GUI_Gamemode_Vote_Label:SetText(translate.Get("you_selected").." "..VoteOption["Game"].." "..translate.Get("for_next_gamemode"))
     			end
 
     			GUI_Gamemode_Vote_Label:SetSize( 240,20 )
@@ -208,9 +208,9 @@ function openVote()
 
     			function GUI_Crows_Vote_Label:Think()
     				if VoteOption["Crows"] then
-    					GUI_Crows_Vote_Label:SetText("You want spectators to become crows.")
+    					GUI_Crows_Vote_Label:SetText(translate.Get("you_want_crows"))
     				else
-    					GUI_Crows_Vote_Label:SetText("You don't want spectators to become crows.")
+    					GUI_Crows_Vote_Label:SetText(translate.Get("you_wont_crows"))
     				end
     			end
 
@@ -222,9 +222,9 @@ function openVote()
 
     			function GUI_Classic_Vote_Label:Think()
     				if VoteOption["Classic"] then
-    					GUI_Classic_Vote_Label:SetText("You want to play Classic mode.")
+    					GUI_Classic_Vote_Label:SetText(translate.Get("you_want_classic"))
     				else
-    					GUI_Classic_Vote_Label:SetText("You don't want to play Classic mode.")
+    					GUI_Classic_Vote_Label:SetText(translate.Get("you_wont_classic"))
     				end
     			end
 
@@ -234,7 +234,7 @@ function openVote()
 
     			local GUI_Submit_Vote = vgui.Create("DButton")
     			GUI_Submit_Vote:SetParent( GUI_Vote_Confirmation_Panel )
-    			GUI_Submit_Vote:SetText( "Submit Your Vote" )
+    			GUI_Submit_Vote:SetText( translate.Get("submit_vote") )
 
     			local x,y = GUI_Vote_Confirmation_Panel:GetSize()
 
@@ -242,21 +242,21 @@ function openVote()
     			GUI_Submit_Vote:SetSize( x - 40,20 )
     			GUI_Submit_Vote.DoClick = function ( btn )
     				if GUI_Difficulty:GetSelectedLine() == easy then
-    					VoteOption["Difficulty"] = "Easy"
+    					VoteOption["Difficulty"] = translate.Get("easy")
     				elseif GUI_Difficulty:GetSelectedLine() == norm then
-    						VoteOption["Difficulty"] = "Normal"
+    						VoteOption["Difficulty"] = translate.Get("normal")
     				elseif GUI_Difficulty:GetSelectedLine() == diff then
-    						VoteOption["Difficulty"] = "Difficult"
+    						VoteOption["Difficulty"] = translate.Get("difficult")
     				elseif GUI_Difficulty:GetSelectedLine() == exp then
-    						VoteOption["Difficulty"] = "Expert"
+    						VoteOption["Difficulty"] = translate.Get("expert")
     				elseif GUI_Difficulty:GetSelectedLine() == suc then
-    						VoteOption["Difficulty"] = "Suicidal"
+    						VoteOption["Difficulty"] = translate.Get("suicidal")
     				elseif GUI_Difficulty:GetSelectedLine() == dth then
-    						VoteOption["Difficulty"] = "Death"
+    						VoteOption["Difficulty"] = translate.Get("death")
     				elseif GUI_Difficulty:GetSelectedLine() == rcc then
-    						VoteOption["Difficulty"] = "RacoonCity"
+    						VoteOption["Difficulty"] = translate.Get("racooncity")
     				end
-    				GUI_Submit_Vote:SetText("Change Vote")
+    				GUI_Submit_Vote:SetText(translate.Get("change_vote"))
     				net.Start("VoteTransfer")
     				net.WriteString(VoteOption["Map"])
     				net.WriteString(VoteOption["Game"])

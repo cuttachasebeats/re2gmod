@@ -4,9 +4,9 @@ GM.Items = {}
 ---Items------------------------
 -------------------------------------------------------------
 GM.Items["item_spray"] = {
-	Name = "Spray",-- The Name
+	Name = translate.Get("spray"),-- The Name
 	Angle = Angle(90,90,90),---- Allows for manual rotation on the display
-	Desc = "Heals all wounds",-- The description
+	Desc = translate.Get("spray_desc"),-- The description
 	Model = "models/firstaidspray.mdl",-- The model
 	-- what it does don't touch it.
 	Condition = function(ply,item)
@@ -35,9 +35,9 @@ GM.Items["item_spray"] = {
 	}
 
 GM.Items["item_herb"] = {
-	Name = "Green Herb",-- The Name
+	Name = translate.Get("green_herb"),-- The Name
 	Angle = Angle(90,90,90),---- Allows for manual rotation on the display
-	Desc = "Heals Some wounds",-- The description
+	Desc = translate.Get("green_herb_desk"),-- The description
 	Model = "models/resident evil/item_herbgre.mdl",-- The model
 	-- what it does don't touch it.
 	Condition = function(ply,item)
@@ -66,8 +66,8 @@ GM.Items["item_herb"] = {
 	}
 
 GM.Items["item_rherb"] = {
-	Name = "Red Herb",
-	Desc = "Chance To Cure Infection",
+	Name = translate.Get("red_herb"),
+	Desc = translate.Get("red_herb_desk"),
 	Model = "models/resident evil/item_herbred.mdl",
 	Condition = function(ply,item)
 				if !ply:GetNWBool("Infected") then
@@ -80,7 +80,7 @@ GM.Items["item_rherb"] = {
 			ply:SetNWBool("Infected", true)
 			ply:SetNWInt("InfectedPercent", 10)
 			ply:SetNWInt("Immunity", ply:GetNWInt("Immunity") + 10 )
-			ply:PrintMessage(HUD_PRINTTALK,"Infection Lowered")
+			ply:PrintTranslatedMessage(HUD_PRINTTALK, "infection_lowered")
 			ply:EmitSound("items/smallmedkit1.wav",110,100)
 
 		end,
@@ -121,8 +121,8 @@ GM.Items["item_bherb"] = {
 }
 
 GM.Items["item_tcure"] = {
-	Name = "T-Virus Cure",
-	Desc = "Cures Infection",
+	Name = translate.Get("tvirus_cure"),
+	Desc = translate.Get("tvirus_cure_desk"),
 	Model = "models/items/healthkit.mdl",
 	Condition = function(ply,item)
 				if !ply:GetNWBool("Infected") then
@@ -135,7 +135,7 @@ GM.Items["item_tcure"] = {
 			ply:SetNWBool("Infected", false)
 			ply:SetNWInt("InfectedPercent", 0)
 			ply:SetNWInt("Immunity", ply:GetNWInt("Immunity") + 10 )
-			ply:PrintMessage(HUD_PRINTTALK,"Infection Cured")
+			ply:PrintTranslatedMessage(HUD_PRINTTALK, "infection_cured")
 			ply:EmitSound("HL1/fvox/antidote_shot.wav",110,100)
 
 			ply:AddStat("CuresUsed", 1)
@@ -147,8 +147,8 @@ GM.Items["item_tcure"] = {
 }
 
 GM.Items["item_ammo_pistol"] = {
-	Name = "Pistol Ammo",
-	Desc = "40 rounds",
+	Name = translate.Get("pistol_ammo"),
+	Desc = translate.Get("pistol_ammo_desk"),
 	Model = "models/re_magazine.mdl",
 	Condition =
 		function(ply,item)
@@ -176,8 +176,8 @@ GM.Items["item_ammo_pistol"] = {
 }
 
 GM.Items["item_ammo_buckshot"] = {
-	Name = "Shotgun Ammo",
-	Desc = "36 rounds",
+	Name = translate.Get("shotgun_ammo"),
+	Desc = translate.Get("shotgun_ammo_desk"),
 	Model = "models/items/boxbuckshot.mdl",
 	Condition =
 		function(ply,item)
@@ -205,8 +205,8 @@ GM.Items["item_ammo_buckshot"] = {
 }
 
 GM.Items["item_ammo_smg"] = {
-	Name = "Automatic Ammo",
-	Desc = "45 rounds",
+	Name = translate.Get("auto_ammo"),
+	Desc = translate.Get("auto_ammo_desk"),
 	Model = "models/items/boxmrounds.mdl",
 	Condition =
 		function(ply,item)
@@ -234,8 +234,8 @@ GM.Items["item_ammo_smg"] = {
 }
 
 GM.Items["item_ammo_rifle"] = {
-	Name = "Rifle Ammo",
-	Desc = "60 rounds",
+	Name = translate.Get("rifle_ammo"),
+	Desc = translate.Get("rifle_ammo_desk"),
 	Model = "models/items/boxsrounds.mdl",
 	Condition =
 		function(ply,item)
@@ -264,8 +264,8 @@ GM.Items["item_ammo_rifle"] = {
 
 GM.Items["item_ammo_magnum"] =
 {
-	Name = "Magnum Rounds",
-	Desc = "35 rounds",
+	Name = translate.Get("magnum_ammo"),
+	Desc = translate.Get("magnum_ammo_desk"),
 	Model = "models/items/357ammobox.mdl",
 	Condition =
 		function(ply,item)
@@ -294,8 +294,8 @@ GM.Items["item_ammo_magnum"] =
 
 GM.Items["item_ammo_sniper"] =
 {
-	Name = "Sniper Rounds",
-	Desc = "20 rounds",
+	Name = translate.Get("sniper_ammo"),
+	Desc = translate.Get("sniper_ammo_desk"),
 	Model = "models/rifle_box.mdl",
 	Condition =
 		function(ply,item)
@@ -324,8 +324,8 @@ GM.Items["item_ammo_sniper"] =
 
 GM.Items["item_ammo_rocket"] =
 {
-	Name = "Rocket Round",
-	Desc = "4 rockets",
+	Name = translate.Get("rocket_round"),
+	Desc = translate.Get("rocket_round_desk"),
 	Model = "models/weapons/w_missile_Closed.mdl",
 	Condition =
 		function(ply,item)
@@ -354,8 +354,8 @@ GM.Items["item_ammo_rocket"] =
 
 GM.Items["item_ammo_gl_explosive"] =
 {
-	Name = "Explosive Rounds",
-	Desc = "6 rounds",
+	Name = translate.Get("explosive_rounds"),
+	Desc = translate.Get("explosive_rounds_desk"),
 	Model = "models/glauncherrounds.mdl",
 	Material = "models/grounds/grenaderounds#00_15",
 	Condition =
@@ -393,8 +393,8 @@ GM.Items["item_ammo_gl_explosive"] =
 }
 GM.Items["item_ammo_gl_flame"] =
 {
-	Name = "Flame Rounds",
-	Desc = "6 rounds",
+	Name = translate.Get("flame_rounds"),
+	Desc = translate.Get("flame_rounds_desk"),
 	Model = "models/glauncherrounds.mdl",
 	Material = "models/grounds/grenaderounds#00_16",
 	Condition =
@@ -432,8 +432,8 @@ GM.Items["item_ammo_gl_flame"] =
 }
 GM.Items["item_ammo_gl_freeze"] =
 {
-	Name = "Freeze Rounds",
-	Desc = "6 rounds",
+	Name = translate.Get("freeze_rounds"),
+	Desc = translate.Get("freeze_rounds_desk"),
 	Model = "models/glauncherrounds.mdl",
 	Material = "models/grounds/grenaderounds#00_17",
 	Condition =
@@ -473,8 +473,8 @@ GM.Items["item_ammo_gl_freeze"] =
 ---Weapons------------------------
 -------------------------------------------------------------
 GM.Items["item_9mmhandgun"] = {
-	Name = "9mm Handgun",
-	Desc = "Uses Pistol Ammo",
+	Name = translate.Get("pistol_9mm"),
+	Desc = translate.Get("pistol_ammo_use"),
 	Model = "models/weapons/w_pist_usp.mdl",
 	Function =
 		function(ply)
@@ -486,8 +486,8 @@ GM.Items["item_9mmhandgun"] = {
 }
 
 GM.Items["item_m4"] = {
-	Name = "M4a1",
-	Desc = "Uses Rifle Ammo",
+	Name = translate.Get("m4a1"),
+	Desc = translate.Get("rifle_ammo_use"),
 	Model = "models/weapons/w_rif_m4re.mdl",
 	Function =
 		function(ply)
@@ -499,8 +499,8 @@ GM.Items["item_m4"] = {
 }
 
 GM.Items["item_p90"] = {
-	Name = "P90",
-	Desc = "Uses Automatic ammo",
+	Name = translate.Get("p90"),
+	Desc = translate.Get("automatic_ammo_use"),
 	Model = "models/weapons/w_smg_p90.mdl",
 	Function =
 		function(ply)
@@ -512,8 +512,8 @@ GM.Items["item_p90"] = {
 }
 
 GM.Items["item_pumpshot"] = {
-	Name = "Pump Shotgun",
-	Desc = "Uses Shotgun ammo",
+	Name = translate.Get("pump_shotgun"),
+	Desc = translate.Get("shotgun_ammo_use"),
 	Model = "models/weapons/w_shot_mossberg5.mdl",
 	Function =
 		function(ply)
@@ -525,8 +525,8 @@ GM.Items["item_pumpshot"] = {
 }
 
 GM.Items["item_glock18"] = {
-	Name = "Glock-18c",
-	Desc = "Uses Pistol Ammo",
+	Name = translate.Get("glock18"),
+	Desc = translate.Get("pistol_ammo_use"),
 	Model = "models/weapons/w_pist_glockre.mdl",
 	Function =
 		function(ply)
@@ -538,8 +538,8 @@ GM.Items["item_glock18"] = {
 }
 
 GM.Items["item_aug"] = {
-	Name = "Aug",
-	Desc = "Uses Rifle ammo",
+	Name = translate.Get("aug"),
+	Desc = translate.Get("rifle_ammo_use"),
 	Model = "models/weapons/w_rif_aug.mdl",
 	Function =
 		function(ply)
@@ -551,8 +551,8 @@ GM.Items["item_aug"] = {
 }
 
 GM.Items["item_mp5"] = {
-	Name = "Mp5",
-	Desc = "Uses Automatic ammo",
+	Name = translate.Get("mp5"),
+	Desc = translate.Get("automatic_ammo_use"),
 	Model = "models/weapons/w_smg_mp5.mdl",
 	Function =
 		function(ply)
@@ -565,8 +565,8 @@ GM.Items["item_mp5"] = {
 
 GM.Items["item_ragerev"] =
 {
-	Name = "Raging Revolver",
-	Desc = "Uses Magnum rounds",
+	Name = translate.Get("ragerev"),
+	Desc = translate.Get("magnum_ammo_use"),
 	Model = "models/weapons/w_revl_raging.mdl",
 	Function =
 		function(ply)
@@ -579,8 +579,8 @@ GM.Items["item_ragerev"] =
 
 GM.Items["item_ump"] =
 {
-	Name = "Ump 45",
-	Desc = "Uses Automatic ammo",
+	Name = translate.Get("ump"),
+	Desc = translate.Get("automatic_ammo_use"),
 	Model = "models/weapons/w_smg_ump45.mdl",
 	Function =
 		function(ply)
@@ -590,10 +590,23 @@ GM.Items["item_ump"] =
 	Max = 1,
 	Num = 18,
 }
+GM.Items["item_deagle"] =
+{
+	Name = translate.Get("deagle"),
+	Desc = translate.Get("magnum_ammo_use"),
+	Model = "models/weapons/w_pist_deagre.mdl",
+	Function =
+		function(ply)
+			ply:SelectWeapon("weapon_deagle_re")
+		end,
+	Price = 3750,
+	Max = 1,
+	Num = 19,
+}
 GM.Items["item_p228"] =
 {
-	Name = "Sig P-220",
-	Desc = "Uses Pistol Ammo",
+	Name = translate.Get("p228"),
+	Desc = translate.Get("pistol_ammo_use"),
 	Model = "models/weapons/w_pist_p220.mdl",
 	Function =
 		function(ply)
@@ -605,8 +618,8 @@ GM.Items["item_p228"] =
 }
 GM.Items["item_ak47"] =
 {
-	Name = "Ak-47",
-	Desc = "Uses Rifle ammo",
+	Name = translate.Get("ak47"),
+	Desc = translate.Get("rifle_ammo_use"),
 	Model = "models/weapons/w_rif_akre.mdl",
 	Function =
 		function(ply)
@@ -618,8 +631,8 @@ GM.Items["item_ak47"] =
 }
 
 GM.Items["item_striker7"] = {
-	Name = "Striker-7",
-	Desc = "Uses Shotgun ammo",
+	Name = translate.Get("striker7"),
+	Desc = translate.Get("shotgun_ammo_use"),
 	Model = "models/weapons/w_shot_strike.mdl",
 	Function =
 		function(ply)
@@ -631,8 +644,8 @@ GM.Items["item_striker7"] = {
 }
 
 GM.Items["item_spas12"] = {
-	Name = "Spas-12",
-	Desc = "Uses Shotgun ammo",
+	Name = translate.Get("spas12"),
+	Desc = translate.Get("shotgun_ammo_use"),
 	Model = "models/weapons/w_shotgun.mdl",
 	Function =
 		function(ply)
@@ -645,8 +658,8 @@ GM.Items["item_spas12"] = {
 
 GM.Items["item_m29"] =
 {
-	Name = "M29 Satan Deux",
-	Desc = "Uses Magnum rounds",
+	Name = translate.Get("m29"),
+	Desc = translate.Get("magnum_ammo_use"),
 	Model = "models/weapons/w_pist_swem29.mdl",
 	Function =
 		function(ply)
@@ -658,8 +671,8 @@ GM.Items["item_m29"] =
 }
 GM.Items["item_physcannon"] =
 {
-	Name = "Gravity Gun",
-	Desc = "Catch!",
+	Name = translate.Get("gravgun"),
+	Desc = translate.Get("gravgun_desk"),
 	Model = "models/weapons/w_physics.mdl",
 	Function =
 		function(ply)
@@ -672,8 +685,8 @@ GM.Items["item_physcannon"] =
 
 GM.Items["item_awp"] =
 {
-	Name = "AWP",
-	Desc = "Uses Sniper Ammo",
+	Name = translate.Get("awp"),
+	Desc = translate.Get("sniper_ammo_use"),
 	Model = "models/weapons/w_snip_awp.mdl",
 	Function =
 		function(ply)
@@ -686,8 +699,8 @@ GM.Items["item_awp"] =
 
 GM.Items["item_scout"] =
 {
-	Name = "Scout Sniper",
-	Desc = "Uses Sniper Ammo",
+	Name = translate.Get("scout"),
+	Desc = translate.Get("sniper_ammo_use"),
 	Model = "models/weapons/w_snip_scout.mdl",
 	Function =
 		function(ply)
@@ -701,8 +714,8 @@ GM.Items["item_scout"] =
 
 GM.Items["item_m79"] =
 {
-	Name = "M79 Grenade Launcher",
-	Desc = "Right Click to Change Ammo Types",
+	Name = translate.Get("m79"),
+	Desc = translate.Get("m79_desk"),
 	Model = "models/weapons/w_grenlaunch_m79.mdl",
 	Function =
 		function(ply)
@@ -715,8 +728,8 @@ GM.Items["item_m79"] =
 
 GM.Items["item_quadrpg"] =
 {
-	Name = "Quad Rocket Launcher",
-	Desc = "4 Rockets.",
+	Name = translate.Get("quadrpg"),
+	Desc = translate.Get("quadrpg_desk"),
 	Model = "models/weapons/w_rpc.mdl",
 	Function =
 		function(ply)
@@ -728,8 +741,8 @@ GM.Items["item_quadrpg"] =
 }
 GM.Items["item_minigun"] =
 {
-	Name = "Minigun",
-	Desc = "200 rounds of death. Rip it up.",
+	Name = translate.Get("minigun"),
+	Desc = translate.Get("minigun_desk"),
 	Model = "models/weapons/w_minigun.mdl",
 	Function =
 		function(ply)
@@ -742,8 +755,8 @@ GM.Items["item_minigun"] =
 
 GM.Items["item_bandolier"] =
 {
-	Name = "Minigun Bandolier",
-	Desc = "Gives 200 more Rounds.",
+	Name = translate.Get("bandolier"),
+	Desc = translate.Get("bandolier_desk"),
 	Model = "models/HMG_AmmoBox.mdl",
 	Function =
 		function(ply)
@@ -811,8 +824,8 @@ GM.Items["item_m249"] =
 ---Special Items (explosives and stuff)------------------------
 -------------------------------------------------------------
 GM.Items["item_expbarrel"] = {
-	Name = "Explosive Barrel",
-	Desc = "Read the name",
+	Name = translate.Get("expbarrel"),
+	Desc = translate.Get("expbarrel_desk"),
 	Model = "models/props_c17/oildrum001_explosive.mdl",
 	Function =
 	function(ply)
@@ -855,8 +868,8 @@ GM.Items["item_expbarrel"] = {
 
 GM.Items["item_c4"] =
 {
-	Name = "C4 Plastic Explosive",
-	Desc = "Plant and Detonate",
+	Name = translate.Get("c4"),
+	Desc = translate.Get("c4_desk"),
 	Model = "models/weapons/w_c4_planted.mdl",
 	Function =
 		function(ply)
@@ -896,8 +909,8 @@ GM.Items["item_c4"] =
 	Num = 14,
 }
 GM.Items["item_landmine"] = {
-	Name = "Proximity Mine",
-	Desc = "Plants at your feet.",
+	Name = translate.Get("proximity_mine"),
+	Desc = translate.Get("proximity_mine_desk"),
 	Model = "models/landmine.mdl",
 	Function =
 	function(ply)
@@ -917,8 +930,8 @@ GM.Items["item_landmine"] = {
 ----- No Moar Items :(
 
 GM.Items["item_an94"] = {
-	Name = "AN94",
-	Desc = "Uses Rifle Ammo",
+	Name = translate.Get("an94"),
+	Desc = translate.Get("rifle_ammo_use"),
 	Model = "models/weapons/w_rif_ak47.mdl",
 	Function =
 		function(ply)
@@ -930,8 +943,8 @@ GM.Items["item_an94"] = {
 }
 
 GM.Items["item_ballista"] = {
-	Name = "Ballista",
-	Desc = "Uses Sniper Ammo",
+	Name = translate.Get("ballista"),
+	Desc = translate.Get("sniper_ammo_use"),
 	Model = "models/weapons/w_snip_scout.mdl",
 	Function =
 		function(ply)
@@ -943,8 +956,8 @@ GM.Items["item_ballista"] = {
 }
 
 GM.Items["item_dsr50"] = {
-	Name = "DSR50",
-	Desc = "Uses Sniper Ammo",
+	Name = translate.Get("dsr50"),
+	Desc = translate.Get("sniper_ammo_use"),
 	Model = "models/weapons/w_snip_awp.mdl",
 	Function =
 		function(ply)
@@ -956,8 +969,8 @@ GM.Items["item_dsr50"] = {
 }
 
 GM.Items["item_executioner"] = {
-	Name = "Executioner",
-	Desc = "Uses Pistol Ammo",
+	Name = translate.Get("executioner"),
+	Desc = translate.Get("pistol_ammo_use"),
 	Model = "models/weapons/w_pist_usp.mdl",
 	Function =
 		function(ply)
@@ -969,8 +982,8 @@ GM.Items["item_executioner"] = {
 }
 
 GM.Items["item_kap40"] = {
-	Name = "Kap40",
-	Desc = "Uses Pistol Ammo",
+	Name = translate.Get("kap40"),
+	Desc = translate.Get("pistol_ammo_use"),
 	Model = "models/weapons/w_pist_usp.mdl",
 	Function =
 		function(ply)
@@ -982,8 +995,8 @@ GM.Items["item_kap40"] = {
 }
 
 GM.Items["item_peace"] = {
-	Name = "PeaceKeeper",
-	Desc = "Uses Automatic Ammo",
+	Name = translate.Get("peace"),
+	Desc = translate.Get("automatic_ammo_use"),
 	Model = "models/weapons/w_rif_m4a1.mdl",
 	Function =
 		function(ply)
@@ -995,8 +1008,8 @@ GM.Items["item_peace"] = {
 }
 
 GM.Items["item_pdw"] = {
-	Name = "PDW",
-	Desc = "Uses Automatic Ammo",
+	Name = translate.Get("pdw"),
+	Desc = translate.Get("automatic_ammo_use"),
 	Model = "models/weapons/w_rif_famas.mdl",
 	Function =
 		function(ply)

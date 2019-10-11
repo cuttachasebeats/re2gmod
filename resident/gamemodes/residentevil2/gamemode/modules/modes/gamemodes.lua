@@ -71,7 +71,7 @@ GM.Gamemode = {}
 					if table.Count(team.GetPlayers(TEAM_HUNK)) > 0 then
 						local reward = table.Count(team.GetPlayers(TEAM_HUNK)) * 150
 						reward = reward * GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier
-						PrintMessage( HUD_PRINTTALK, "Surviving players won $"..reward.." for staying alive. Well done!" )
+						PrintTranslatedMessage( HUD_PRINTTALK, "survived", reward)
 						for _,ply in pairs(player.GetAll()) do
 							if ply:Team() == TEAM_HUNK then
 
@@ -267,7 +267,7 @@ GM.Gamemode = {}
 					ply:SetNWInt("Money",math.Round(ply:GetNWInt("Money")+ reward))
 				end
 			end
-			PrintMessage( HUD_PRINTTALK, "The "..GetGlobalString("Re2_TEAMVIP_Winner").." Team Won! They are awarded $"..reward.." each. Fine Work!" )
+			PrintTranslatedMessage( HUD_PRINTTALK, GetGlobalString("Re2_TEAMVIP_Winner"), "teamvip_won", reward )
 		end,
 
 		HudFunction = function(ply)
@@ -290,10 +290,10 @@ GM.Gamemode = {}
 				if GetGlobalString("Mode") == "End" then
 					if GetGlobalString("Re2_TEAMVIP_Winner") == "Umbrella" then
 						DrawIcon(surface.GetTextureID("re2_teams/umbrella" ),SW/2 - 150, SH/2 - 150 ,300,300)
-						draw.SimpleText("Umbrella Wins","Trebuchet18o",SW/2 ,SH/2 + 150 + 10,Color(255,255,255,255),1,0)
+						draw.SimpleText(translate.Get("umbrella_win"),"Trebuchet18o",SW/2 ,SH/2 + 150 + 10,Color(255,255,255,255),1,0)
 					elseif GetGlobalString("Re2_TEAMVIP_Winner") == "S.T.A.R.S" then
 						DrawIcon(surface.GetTextureID("re2_teams/stars" ),SW/2 - 123, SH/2 - 144 ,246,288)
-						draw.SimpleText("S.T.A.R.S Wins","Trebuchet18o",SW/2,SH/2 + 144 + 10,Color(255,255,255,255),1,0)
+						draw.SimpleText(translate.Get("stars_win"),"Trebuchet18o",SW/2,SH/2 + 144 + 10,Color(255,255,255,255),1,0)
 					end
 				end
 
@@ -324,7 +324,7 @@ GM.Gamemode = {}
 						surface.DrawLine(maxp.x,maxp.y,maxp.x,minp.y)
 						surface.SetDrawColor(255,255,255,155)
 						surface.SetTextPos(minp.x+2,maxp.y-15)
-						local text = "Protect This Player"
+						local text = translate.Get("protect_vip")
 						surface.SetFont("DefaultSmall")
 						surface.DrawText(text)
 						surface.SetDrawColor(255,255,255,255)
@@ -333,8 +333,8 @@ GM.Gamemode = {}
 						surface.DrawText(text)
 					elseif ply == GetGlobalEntity("Team01_VIP") && GetGlobalEntity("Team01_VIP"):Team() == TEAM_HUNK then
 						surface.SetFont("Trebuchet18o")
-						local textx,texty = surface.GetTextSize("You are the Vip")
-						draw.SimpleText("You are the Vip","Trebuchet18o",SW/2 - textx/2,SH - SH + 60,Color(255,255,255,255),0,0)
+						local textx,texty = surface.GetTextSize(translate.Get("you_vip"))
+						draw.SimpleText(translate.Get("you_vip"),"Trebuchet18o",SW/2 - textx/2,SH - SH + 60,Color(255,255,255,255),0,0)
 					end
 				elseif ply:GetNWInt("TeamId") == 2 then
 					DrawIcon(surface.GetTextureID("re2_teams/umbrella" ),SW/2 - 16, SH - SH + 28 ,32,32)
@@ -364,7 +364,7 @@ GM.Gamemode = {}
 						surface.DrawLine(maxp.x,maxp.y,maxp.x,minp.y)
 						surface.SetDrawColor(255,255,255,155)
 						surface.SetTextPos(minp.x+2,maxp.y-15)
-						local text = "Protect This Player"
+						local text = translate.Get("protect_vip")
 						surface.SetFont("DefaultSmall")
 						surface.DrawText(text)
 						surface.SetDrawColor(255,255,255,255)
@@ -373,8 +373,8 @@ GM.Gamemode = {}
 						surface.DrawText(text)
 					elseif ply == GetGlobalEntity("Team02_VIP") && GetGlobalEntity("Team02_VIP"):Team() == TEAM_HUNK then
 						surface.SetFont("Trebuchet18o")
-						local textx,texty = surface.GetTextSize("You are the Vip")
-						draw.SimpleText("You are the Vip","Trebuchet18o",SW/2 - textx/2,SH - SH + 60,Color(255,255,255,255),0,0)
+						local textx,texty = surface.GetTextSize(translate.Get("you_vip"))
+						draw.SimpleText(translate.Get("you_vip"),"Trebuchet18o",SW/2 - textx/2,SH - SH + 60,Color(255,255,255,255),0,0)
 					end
 				end
 			end,
@@ -479,12 +479,12 @@ GM.Gamemode = {}
 			if GetGlobalEntity( "Thevip", VIP  ):Team() == TEAM_HUNK then
 				local reward = math.Round((GetGlobalInt("RE2_DeadZombies") * math.Round(table.Count( player.GetAll())))/ 2)
 				reward = reward * 2 * GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier
-				PrintMessage( HUD_PRINTTALK, "The Vip has survived! All players won $"..reward.." . Fine Work!" )
+				PrintTranslatedMessage( HUD_PRINTTALK, "vip_survived", reward )
 				for _,ply  in pairs(player.GetAll()) do
 					ply:SetNWInt("Money",math.Round(ply:GetNWInt("Money")+ reward))
 				end
 			else
-				PrintMessage( HUD_PRINTTALK, "The Vip has died, nobody is rewarded a special bonus." )
+				PrintTranslatedMessage( HUD_PRINTTALK, "vip_died" )
 			end
 		end,
 
@@ -520,7 +520,7 @@ GM.Gamemode = {}
 					surface.DrawLine(maxp.x,maxp.y,maxp.x,minp.y)
 					surface.SetDrawColor(255,255,255,155)
 					surface.SetTextPos(minp.x+2,maxp.y-15)
-					local text = "Protect This Player"
+					local text = translate.Get("protect_vip")
 					surface.SetFont("DefaultSmall")
 					surface.DrawText(text)
 					surface.SetDrawColor(255,255,255,255)
@@ -529,8 +529,8 @@ GM.Gamemode = {}
 					surface.DrawText(text)
 				elseif ply == GetGlobalEntity("Thevip") && GetGlobalEntity("Thevip"):Team() == TEAM_HUNK then
 					surface.SetFont("Trebuchet18o")
-					local textx,texty = surface.GetTextSize("You are the Vip")
-					draw.SimpleText("You are the Vip","Trebuchet18o",SW/2 - textx/2,SH - SH + 60,Color(255,255,255,255),0,0)
+					local textx,texty = surface.GetTextSize(translate.Get("you_vip"))
+					draw.SimpleText(translate.Get("you_vip"),"Trebuchet18o",SW/2 - textx/2,SH - SH + 60,Color(255,255,255,255),0,0)
 					DrawIcon(surface.GetTextureID("gui/silkicons/star" ),SW/2 - 8, SH - SH + 36 ,16,16)
 				end
 			end
@@ -606,7 +606,7 @@ GM.Gamemode = {}
 			end
 			local reward = table.Count(player.GetAll())*250
 			reward = reward * GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier
-			PrintMessage( HUD_PRINTTALK, leader:Nick().." won "..reward.." for getting the most kills. Well done!" )
+			PrintTranslatedMessage( HUD_PRINTTALK, leader:Nick(), "won", reward )
 			leader:SetNWInt("Money", leader:GetNWInt("Money") + (math.Round(table.Count(player.GetAll())*350)))
 		end,
 		}
@@ -636,7 +636,7 @@ GM.Gamemode = {}
 
 		StartFunction = function()
 			SetGlobalInt("RE2_DeadZombies",GetGlobalInt("RE2_DeadZombies") + 1)
-            PrintMessage(HUD_PRINTTALK,"Boss has appeared...KILL HIM!")
+            PrintTranslatedMessage(HUD_PRINTTALK, "boss_appeared")
             local Zombie = {
 				"snpc_zombie_nemesis",
 				"snpc_zombie_king",}
@@ -683,12 +683,12 @@ GM.Gamemode = {}
 		RewardFunction = function()
 			local reward = math.Round((table.Count(player.GetAll())*GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier*400) / (1 + ((table.Count(player.GetAll())) / (6 + (table.Count(player.GetAll())/2) / table.Count(player.GetAll())))))
 			if (GetGlobalString("RE2_Game") == "Boss") && GetGlobalInt("RE2_DeadZombies") == 2 then
-				PrintMessage( HUD_PRINTTALK, "Players killed nemesis, $"..reward.." to everyone" )
+				PrintTranslatedMessage( HUD_PRINTTALK, "boss_killed", reward )
 				for k,v in pairs(player.GetAll()) do
 					v:SetNWInt("Money",v:GetNWInt("Money",0)+reward)
 				end
 			else
-				PrintMessage( HUD_PRINTTALK, "Players did not kill the Boss, no cash earned" )
+				PrintTranslatedMessage( HUD_PRINTTALK, "boss_not_killed" )
 			end
 			end,
 		}

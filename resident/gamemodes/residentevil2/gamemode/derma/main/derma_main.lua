@@ -14,7 +14,7 @@ local CloseBtn = re2_create_Button(MainPanel, .975, 0, .025, .05,Color(0,0,0), "
       CloseBtn.Paint = function() draw.RoundedBox( 0, 0, 0, CloseBtn:GetWide(), CloseBtn:GetTall(), Color(200,30,30,255)) end
       CloseBtn.DoClick = function() MainPanel:Remove() end
 
-      VoteTab = re2_create_Button(MainPanel, .01, 0, .1, .05,Color(255,255,255), "font large", "Voting")
+      VoteTab = re2_create_Button(MainPanel, .01, 0, .1, .05,Color(255,255,255), "font large", translate.Get("voting_menu"))
       VoteTab.Paint = function() draw.RoundedBox( 0, 0, 0, VoteTab:GetWide(), VoteTab:GetTall(), Color(60,60,60,255)) end
       VoteTab.DoClick = function() openVote()
       VoteTab:SetTextColor(Color(0,200,30))
@@ -31,7 +31,7 @@ local CloseBtn = re2_create_Button(MainPanel, .975, 0, .025, .05,Color(0,0,0), "
 
       end
 
-      StoreTab = re2_create_Button(MainPanel, .12, 0, .1, .05,Color(255,255,255), "font large", "Store")
+      StoreTab = re2_create_Button(MainPanel, .12, 0, .1, .05,Color(255,255,255), "font large", translate.Get("store_menu"))
       StoreTab.Paint = function() draw.RoundedBox( 0, 0, 0, StoreTab:GetWide(), StoreTab:GetTall(), Color(60,60,60,255)) end
       StoreTab.DoClick = function() openStore()
       StoreTab:SetTextColor(Color(0,200,30))
@@ -48,7 +48,7 @@ local CloseBtn = re2_create_Button(MainPanel, .975, 0, .025, .05,Color(0,0,0), "
 
      end
 
-      ChestsTab = re2_create_Button(MainPanel, .23, 0, .1, .05,Color(255,255,255), "font large", "Chest")
+      ChestsTab = re2_create_Button(MainPanel, .23, 0, .1, .05,Color(255,255,255), "font large", translate.Get("chest_menu"))
       ChestsTab.Paint = function() draw.RoundedBox( 0, 0, 0, ChestsTab:GetWide(), ChestsTab:GetTall(), Color(60,60,60,255)) end
       ChestsTab.DoClick = function() openChest()
       ChestsTab:SetTextColor(Color(0,200,30))
@@ -65,7 +65,7 @@ local CloseBtn = re2_create_Button(MainPanel, .975, 0, .025, .05,Color(0,0,0), "
 
       end
 
-      SkillsTab = re2_create_Button(MainPanel, .34, 0, .1, .05,Color(255,255,255), "font large", "Skills")
+      SkillsTab = re2_create_Button(MainPanel, .34, 0, .1, .05,Color(255,255,255), "font large", translate.Get("skills_menu"))
       SkillsTab.Paint = function() draw.RoundedBox( 0, 0, 0, SkillsTab:GetWide(), SkillsTab:GetTall(), Color(60,60,60,255)) end
       SkillsTab.DoClick = function() openSkills()
       SkillsTab:SetTextColor(Color(0,200,30))
@@ -81,7 +81,7 @@ local CloseBtn = re2_create_Button(MainPanel, .975, 0, .025, .05,Color(0,0,0), "
       StoreTab:SetDisabled(false)
        end
 
-      UpgradesTab = re2_create_Button(MainPanel, .45, 0, .1, .05,Color(255,255,255), "font large", "Upgrades")
+      UpgradesTab = re2_create_Button(MainPanel, .45, 0, .1, .05,Color(255,255,255), "font large", translate.Get("upgrades_menu"))
       UpgradesTab.Paint = function() draw.RoundedBox( 0, 0, 0, UpgradesTab:GetWide(), UpgradesTab:GetTall(), Color(60,60,60,255)) end
       UpgradesTab.DoClick = function() openUpgrades()
       UpgradesTab:SetTextColor(Color(0,200,30))
@@ -100,7 +100,7 @@ local CloseBtn = re2_create_Button(MainPanel, .975, 0, .025, .05,Color(0,0,0), "
 
 
 if isAdmin == true then
-    AdminTab = re2_create_Button(MainPanel, .86, 0, .1, .05,Color(255,255,255), "font large", "Admin")
+    AdminTab = re2_create_Button(MainPanel, .86, 0, .1, .05,Color(255,255,255), "font large", translate.Get("admin_menu"))
     AdminTab.Paint = function() draw.RoundedBox( 0, 0, 0, AdminTab:GetWide(), AdminTab:GetTall(), Color(60,60,60,255)) end
     AdminTab.DoClick = function() openAdmin() end
 end

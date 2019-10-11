@@ -33,7 +33,7 @@ function openUpgrades()
   
   GUI_LoadInventory(GUI_Inventory_Panel)
   
-  GUI_Property_Sheet:AddSheet( "Upgrade Weapons", GUI_Inventory_Panel, "icon16/box.png", true, true, "I wonder what you would buy here?" )
+  GUI_Property_Sheet:AddSheet( translate.Get("upgrade_weapons"), GUI_Inventory_Panel, "icon16/box.png", true, true, translate.Get("upgrade_weapons_msg") )
   
   
   
@@ -114,7 +114,7 @@ end
           GUI_Inventory_DepositItem_Button:SetParent(GUI_Inventory_Base)
           GUI_Inventory_DepositItem_Button:SetSize(100,20)
           GUI_Inventory_DepositItem_Button:SetPos(14,160)
-          GUI_Inventory_DepositItem_Button:SetText("Deposit")
+          GUI_Inventory_DepositItem_Button:SetText(translate.Get("deposit"))
           GUI_Inventory_DepositItem_Button.DoClick = function(GUI_Inventory_DepositItem_Button)
                                   for b,d in pairs(Chest) do
                                     if d.Weapon == "none" then
@@ -170,7 +170,7 @@ end
 
         local GUI_PowerStat_Label = vgui.Create("DLabel")
         GUI_PowerStat_Label:SetParent(GUI_Inventory_Base)
-        GUI_PowerStat_Label:SetText("Damage: "..tostring(GAMEMODE.Weapons[Item].UpGrades.Power[intPowerLevel].Level))
+        GUI_PowerStat_Label:SetText(translate.Get("damage")..": "..tostring(GAMEMODE.Weapons[Item].UpGrades.Power[intPowerLevel].Level))
         GUI_PowerStat_Label:SetPos(128 + 28 ,58)
         GUI_PowerStat_Label:SetFont("Default")
         GUI_PowerStat_Label:SizeToContents()
@@ -207,7 +207,7 @@ end
 
         local GUI_AccuracyStat_Label = vgui.Create("DLabel")
         GUI_AccuracyStat_Label:SetParent(GUI_Inventory_Base)
-        GUI_AccuracyStat_Label:SetText("Accuracy: "..tostring(GAMEMODE.Weapons[Item].UpGrades.Accuracy[intAccuracyLevel].Level))
+        GUI_AccuracyStat_Label:SetText(translate.Get("accuracy")..": "..tostring(GAMEMODE.Weapons[Item].UpGrades.Accuracy[intAccuracyLevel].Level))
         GUI_AccuracyStat_Label:SetPos(128 + 28,78)
         GUI_AccuracyStat_Label:SetFont("Default")
         GUI_AccuracyStat_Label:SizeToContents()
@@ -234,7 +234,7 @@ end
 
         local GUI_ClipSizeStat_Label = vgui.Create("DLabel")
         GUI_ClipSizeStat_Label:SetParent(GUI_Inventory_Base)
-        GUI_ClipSizeStat_Label:SetText("Clip Size: "..tostring(GAMEMODE.Weapons[Item].UpGrades.ClipSize[intClipSizeLevel].Level))
+        GUI_ClipSizeStat_Label:SetText(translate.Get("clip_size")..": "..tostring(GAMEMODE.Weapons[Item].UpGrades.ClipSize[intClipSizeLevel].Level))
         GUI_ClipSizeStat_Label:SetPos(128 + 28 ,98)
         GUI_ClipSizeStat_Label:SetFont("Default")
         GUI_ClipSizeStat_Label:SizeToContents()
@@ -261,7 +261,7 @@ end
 
         local GUI_FiringSpeedStat_Label = vgui.Create("DLabel")
         GUI_FiringSpeedStat_Label:SetParent(GUI_Inventory_Base)
-        GUI_FiringSpeedStat_Label:SetText("Firing Speed: "..tostring(GAMEMODE.Weapons[Item].UpGrades.FiringSpeed[intFiringSpeedLevel].Level))
+        GUI_FiringSpeedStat_Label:SetText(translate.Get("firing_speed")..": "..tostring(GAMEMODE.Weapons[Item].UpGrades.FiringSpeed[intFiringSpeedLevel].Level))
         GUI_FiringSpeedStat_Label:SetPos(128 + 28,118)
         GUI_FiringSpeedStat_Label:SetFont("Default")
         GUI_FiringSpeedStat_Label:SizeToContents()
@@ -288,7 +288,7 @@ end
 
         local GUI_ReloadSpeedStat_Label = vgui.Create("DLabel")
         GUI_ReloadSpeedStat_Label:SetParent(GUI_Inventory_Base)
-        GUI_ReloadSpeedStat_Label:SetText("Reload Speed: "..tostring(GAMEMODE.Weapons[Item].UpGrades.ReloadSpeed[intReloadSpeedLevel].Level))
+        GUI_ReloadSpeedStat_Label:SetText(translate.Get("reload_speed")..": "..tostring(GAMEMODE.Weapons[Item].UpGrades.ReloadSpeed[intReloadSpeedLevel].Level))
         GUI_ReloadSpeedStat_Label:SetPos(128 + 28,138)
         GUI_ReloadSpeedStat_Label:SetFont("Default")
         GUI_ReloadSpeedStat_Label:SizeToContents()
@@ -298,32 +298,32 @@ end
         GUI_Power_UpgradeWeapon_Button:SetParent(GUI_Inventory_Base)
         GUI_Power_UpgradeWeapon_Button:SetSize(50,15)
         GUI_Power_UpgradeWeapon_Button:SetPos(128  + (GUI_Inventory_Base:GetWide() - (128) - 56 - 25 ),57)
-        GUI_Power_UpgradeWeapon_Button:SetText("Upgrade")
+        GUI_Power_UpgradeWeapon_Button:SetText(translate.Get("upgrade"))
 
 
         local GUI_Accuracy_UpgradeWeapon_Button = vgui.Create("DButton")
         GUI_Accuracy_UpgradeWeapon_Button:SetParent(GUI_Inventory_Base)
         GUI_Accuracy_UpgradeWeapon_Button:SetSize(50,15)
         GUI_Accuracy_UpgradeWeapon_Button:SetPos(128  + (GUI_Inventory_Base:GetWide() - (128) - 56 - 25 ),77)
-        GUI_Accuracy_UpgradeWeapon_Button:SetText("Upgrade")
+        GUI_Accuracy_UpgradeWeapon_Button:SetText(translate.Get("upgrade"))
 
         local GUI_ClipSize_UpgradeWeapon_Button = vgui.Create("DButton")
         GUI_ClipSize_UpgradeWeapon_Button:SetParent(GUI_Inventory_Base)
         GUI_ClipSize_UpgradeWeapon_Button:SetSize(50,15)
         GUI_ClipSize_UpgradeWeapon_Button:SetPos(128  + (GUI_Inventory_Base:GetWide() - (128) - 56 - 25 ),97)
-        GUI_ClipSize_UpgradeWeapon_Button:SetText("Upgrade")
+        GUI_ClipSize_UpgradeWeapon_Button:SetText(translate.Get("upgrade"))
 
         local GUI_FiringSpeed_UpgradeWeapon_Button = vgui.Create("DButton")
         GUI_FiringSpeed_UpgradeWeapon_Button:SetParent(GUI_Inventory_Base)
         GUI_FiringSpeed_UpgradeWeapon_Button:SetSize(50,15)
         GUI_FiringSpeed_UpgradeWeapon_Button:SetPos(128  + (GUI_Inventory_Base:GetWide() - (128) - 56 - 25 ),117)
-        GUI_FiringSpeed_UpgradeWeapon_Button:SetText("Upgrade")
+        GUI_FiringSpeed_UpgradeWeapon_Button:SetText(translate.Get("upgrade"))
 
         local GUI_ReloadSpeed_UpgradeWeapon_Button = vgui.Create("DButton")
         GUI_ReloadSpeed_UpgradeWeapon_Button:SetParent(GUI_Inventory_Base)
         GUI_ReloadSpeed_UpgradeWeapon_Button:SetSize(50,15)
         GUI_ReloadSpeed_UpgradeWeapon_Button:SetPos(128  + (GUI_Inventory_Base:GetWide() - (128) - 56 - 25 ),137)
-        GUI_ReloadSpeed_UpgradeWeapon_Button:SetText("Upgrade")
+        GUI_ReloadSpeed_UpgradeWeapon_Button:SetText(translate.Get("upgrade"))
 
 
 

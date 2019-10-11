@@ -76,6 +76,9 @@ AddCSLuaFile("config.lua")
 include("shared.lua")
 include("config.lua")
 
+--Multi-language
+AddCSLuaFile( "translate.lua" )
+
 
 --Derma
 --AddCSLuaFile("derma/cl_chests.lua")

@@ -28,6 +28,8 @@ include("derma/voting/cl_voting.lua")
 include("derma/upgrades/cl_upgrades.lua")
 include("libraries/derma/fonts.lua")
 
+local translate = translate
+
 function TableRandom(tablename) return tablename[math.random(1,table.Count(tablename))] end
 
 function GM:Initialize()

@@ -20,7 +20,7 @@ function PLY:DeathReward()
 		local reward = math.Round((self:GetNWInt("Time")/60) * self:GetNWInt("killcount") + self:GetNWInt("killcount"))
 		self:SetNWInt("Money",math.Round(self:GetNWInt("Money") + reward * GAMEMODE.ZombieData[GetGlobalString("Re2_Difficulty")].Modifier ))
 		self.CanEarn = false
-		self:PrintMessage(HUD_PRINTTALK,"You earned $"..reward)
+		self:PrintTranslatedMessage(HUD_PRINTTALK, "you_earned", reward)
 	end
 end
 

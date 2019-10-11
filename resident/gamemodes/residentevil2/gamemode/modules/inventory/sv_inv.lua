@@ -128,7 +128,7 @@ function inv_HasRoom(ply,item)
 		end
 		if MaxWeapons < 0 then
 			if ply.nextchatprint == nil || ply.nextchatprint < CurTime() then
-				ply:ChatPrint("Too many weapons")
+				ply:PrintTranslatedMessage("many_weapons")
 				ply.nextchatprint = CurTime() + 0.5
 			end
 			return false
